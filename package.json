@@ -1,0 +1,8 @@
+{
+  "name": "jun-meetups",
+  "private": true,
+  "description": "Static site for the meetups Jun hosts. The site is buildless; this package holds author-time poster tooling only.",
+  "scripts": {
+    "posters": "bash tools/generate-posters.sh"
+  }
+}
