@@ -22,22 +22,24 @@ a{color:inherit;text-decoration:none}
 .back{display:inline-flex;align-items:center;gap:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--ash)}
 .back:hover{color:var(--flame)}
 .top-tag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.18em;color:var(--ash-dim);text-transform:uppercase}
+.top-free{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;color:var(--ash);text-transform:uppercase}
+.top-free strong{color:var(--flame);font-weight:600}
 
 /* hero */
 .hero{position:relative;min-height:96svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:5rem var(--pad) 4rem;text-align:center}
 .hero-in{position:relative;z-index:2;max-width:760px;display:flex;flex-direction:column;align-items:center;gap:1.15rem}
-.p-title{font-family:"Silkscreen",monospace;font-weight:700;font-size:clamp(2rem,7.5vw,5rem);line-height:.98;white-space:nowrap;color:var(--coral);text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow),6px 7px 16px rgba(0,0,0,.55)}
+.p-title{font-family:"Silkscreen",monospace;font-weight:700;font-size:clamp(2rem,7vw,4.3rem);line-height:.98;white-space:nowrap;color:var(--coral);text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow),6px 7px 16px rgba(0,0,0,.55)}
 .p-title .hash{font-style:normal;color:var(--flame)}
 .tagline{font-family:"Silkscreen",monospace;font-size:clamp(1rem,3.2vw,1.7rem);letter-spacing:.04em;color:var(--flame);text-shadow:2px 2px 0 rgba(122,46,20,.7)}
 .lede{max-width:44ch;color:var(--bone);font-size:1.05rem;text-shadow:0 1px 12px rgba(8,4,2,.7)}
 .chips{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center}
-.chip{display:inline-flex;align-items:center;gap:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--bone);background:rgba(30,16,10,.72);border:1px solid var(--line);padding:.5rem .9rem;border-radius:999px}
+.chip{display:inline-flex;align-items:center;gap:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--bone);background:rgba(22,13,8,.38);border:1px solid rgba(255,180,120,.14);padding:.5rem .9rem;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);box-shadow:0 0 10px 2px rgba(255,120,45,.8)}
 .cta-row{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:.2rem}
 .btn{font-family:"IBM Plex Mono",monospace;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;padding:.78rem 1.35rem;border-radius:999px;font-weight:600;transition:transform .15s,box-shadow .2s,border-color .2s,color .2s;cursor:pointer;border:none}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:linear-gradient(135deg,var(--flame),var(--glow));color:#20100a;box-shadow:0 8px 26px -8px rgba(255,120,45,.7)}
-.btn-ghost{border:1px solid var(--line);color:var(--bone);background:rgba(30,16,10,.4)}
+.btn-ghost{border:1px solid rgba(255,180,120,.16);color:var(--bone);background:rgba(22,13,8,.34);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .btn-ghost:hover{border-color:var(--glow-soft);color:var(--flame)}
 .btn-ghost[aria-disabled="true"]{opacity:.55;pointer-events:none}
 .hero-meta{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem .9rem;justify-content:center;font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--ash);margin-top:.2rem}
@@ -47,11 +49,11 @@ a{color:inherit;text-decoration:none}
 .orga-line{display:flex;align-items:center;gap:.6rem;color:var(--ash);font-size:.9rem;margin-top:.5rem}
 .orga-line strong{color:var(--bone)}
 .orga-line img{width:34px;height:34px}
-.horizon{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-/* atmospheric glow rising off the limb into space */
-.horizon::before{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:150%;height:60%;background:radial-gradient(ellipse 60% 95% at 50% 100%,rgba(255,134,54,.40),rgba(255,106,31,.10) 46%,transparent 66%)}
-/* the planet: dark body with a glowing curved limb (Earth from space) */
-.horizon::after{content:"";position:absolute;left:50%;top:70%;transform:translateX(-50%);width:220%;height:150vh;border-radius:50%;background:radial-gradient(ellipse 100% 30% at 50% 0%,rgba(255,140,60,.18),transparent 55%),var(--void);box-shadow:0 -1px 0 1.5px rgba(255,230,192,.85),0 2px 30px 4px rgba(255,150,60,.5),0 6px 100px 26px rgba(255,110,35,.26)}
+.horizon{--orbit-r:1900px;--line-y:66%;position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 24%,#000 76%,transparent 97%);mask-image:linear-gradient(90deg,transparent 3%,#000 24%,#000 76%,transparent 97%)}
+/* atmosphere glow ring hugging the limb + sunrise bloom at centre */
+.horizon::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 26% 13% at 50% calc(var(--line-y) - 1.5%),rgba(255,246,228,.60),rgba(255,182,104,.32) 36%,transparent 72%),radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1px),rgba(255,150,70,.34) calc(var(--orbit-r) + 6px),rgba(255,116,42,.10) calc(var(--orbit-r) + 46px),transparent calc(var(--orbit-r) + 130px))}
+/* the thin bright rim */
+.horizon::after{content:"";position:absolute;inset:0;background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1.6px),rgba(255,240,216,.95) calc(var(--orbit-r) - .3px),rgba(255,240,216,.95) var(--orbit-r),transparent calc(var(--orbit-r) + .9px))}
 
 /* generic section */
 .section{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--line)}
@@ -111,8 +113,10 @@ a{color:inherit;text-decoration:none}
 
 /* the poster artwork */
 .poster{position:absolute;top:0;left:0;transform-origin:top left;overflow:hidden;background:var(--void);color:var(--bone);box-shadow:0 24px 60px -20px rgba(0,0,0,.8);border:1px solid #201009}
-.poster .stagelight{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:150%;height:46%;pointer-events:none;background:radial-gradient(ellipse 58% 95% at 50% 100%,rgba(255,134,54,.40),rgba(255,106,31,.10) 46%,transparent 66%)}
-.poster .light{position:absolute;left:50%;top:66%;transform:translateX(-50%);width:200%;height:200%;border-radius:50%;background:radial-gradient(ellipse 100% 24% at 50% 0%,rgba(255,140,60,.16),transparent 55%),var(--void);box-shadow:0 -1px 0 1.5px rgba(255,230,192,.85),0 2px 26px 4px rgba(255,150,60,.5),0 6px 90px 22px rgba(255,110,35,.26)}
+.poster{--orbit-r:1900px;--line-y:66%}
+.poster .stagelight,.poster .light{-webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 22%,#000 78%,transparent 97%);mask-image:linear-gradient(90deg,transparent 3%,#000 22%,#000 78%,transparent 97%)}
+.poster .stagelight{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 24% 12% at 50% calc(var(--line-y) - 1.5%),rgba(255,246,228,.60),rgba(255,182,104,.32) 36%,transparent 72%),radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1px),rgba(255,150,70,.34) calc(var(--orbit-r) + 6px),rgba(255,116,42,.10) calc(var(--orbit-r) + 46px),transparent calc(var(--orbit-r) + 130px))}
+.poster .light{position:absolute;inset:0;background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1.6px),rgba(255,240,216,.95) calc(var(--orbit-r) - .3px),rgba(255,240,216,.95) var(--orbit-r),transparent calc(var(--orbit-r) + .9px))}
 .poster .pcontent{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:56px}
 .pk-eyebrow{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;font-size:19px;color:var(--coral)}
 .pk-title{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:.98;text-shadow:3px 3px 0 var(--coral-deep),6px 6px 0 var(--coral-shadow)}
@@ -157,8 +161,7 @@ a{color:inherit;text-decoration:none}
 .poster[data-mode="landscape"] .pk-more{font-size:20px}
 .poster[data-mode="landscape"] .pk-badge{font-size:19px}
 .poster[data-mode="landscape"] .pk-orga{font-size:19px}
-.poster[data-mode="landscape"] .light{top:80%}
-.poster[data-mode="landscape"] .stagelight{height:34%}
+.poster[data-mode="landscape"]{--line-y:80%}
 .poster[data-mode="landscape"] .pk-speakers{display:flex;flex-direction:column;gap:16px}
 
 /* footer */
