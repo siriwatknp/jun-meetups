@@ -119,7 +119,7 @@ a{color:inherit;text-decoration:none}
 .poster .light{position:absolute;inset:0;background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1.6px),rgba(255,240,216,.95) calc(var(--orbit-r) - .3px),rgba(255,240,216,.95) var(--orbit-r),transparent calc(var(--orbit-r) + .9px))}
 .poster .pcontent{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:56px}
 .pk-eyebrow{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;font-size:19px;color:var(--coral)}
-.pk-title{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:.98;text-shadow:3px 3px 0 var(--coral-deep),6px 6px 0 var(--coral-shadow)}
+.pk-title{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:.98;white-space:nowrap;text-shadow:3px 3px 0 var(--coral-deep),6px 6px 0 var(--coral-shadow)}
 .pk-title .hash{color:var(--flame)}
 .pk-tag{font-family:"Silkscreen",monospace;color:var(--flame);text-shadow:2px 2px 0 rgba(122,46,20,.7)}
 .pk-date{font-family:"IBM Plex Mono",monospace;color:var(--bone);border:1px solid var(--line);background:rgba(30,16,10,.7);padding:12px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;width:max-content}
@@ -136,7 +136,7 @@ a{color:inherit;text-decoration:none}
 
 /* PORTRAIT mode */
 .poster[data-mode="portrait"] .pcontent{gap:30px;padding:60px}
-.poster[data-mode="portrait"] .pk-title{font-size:112px}
+.poster[data-mode="portrait"] .pk-title{font-size:80px}
 .poster[data-mode="portrait"] .pk-tag{font-size:36px;margin-top:12px}
 .poster[data-mode="portrait"] .pk-date{font-size:26px}
 .poster[data-mode="portrait"] .pk-venue{font-size:22px}
@@ -151,7 +151,7 @@ a{color:inherit;text-decoration:none}
 /* LANDSCAPE mode */
 .poster[data-mode="landscape"] .pcontent{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;padding:52px 60px;align-content:center}
 .poster[data-mode="landscape"] .col{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.poster[data-mode="landscape"] .pk-title{font-size:76px}
+.poster[data-mode="landscape"] .pk-title{font-size:56px}
 .poster[data-mode="landscape"] .pk-tag{font-size:28px;margin-top:8px}
 .poster[data-mode="landscape"] .pk-date{font-size:22px}
 .poster[data-mode="landscape"] .pk-venue{font-size:19px}
