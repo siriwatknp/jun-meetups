@@ -49,6 +49,8 @@ python3 -m http.server 8140
 # http://localhost:8140/
 ```
 
-## Deploy (GitHub Pages)
+## Deploy (Vercel)
 
-Public repo → Settings → Pages → Deploy from branch → `main` / root. `.nojekyll` is included.
+Deployed on Vercel as a static site (`vercel.json`: no build, output = repo root, cleanUrls).
+Git integration is connected: pushes create preview deployments, `main` deploys to production
+at https://jun-meetups.vercel.app. Manual deploy: `vercel --prod`.
