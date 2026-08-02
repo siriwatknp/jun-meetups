@@ -118,52 +118,29 @@ a{color:inherit;text-decoration:none}
 .poster .stagelight,.poster .light{-webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 22%,#000 78%,transparent 97%);mask-image:linear-gradient(90deg,transparent 3%,#000 22%,#000 78%,transparent 97%)}
 .poster .stagelight{position:absolute;inset:0;pointer-events:none;background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),var(--void) calc(var(--orbit-r) - .5px),transparent var(--orbit-r)),radial-gradient(ellipse 24% 12% at 50% calc(var(--line-y) - 1.5%),rgba(255,246,228,.60),rgba(255,182,104,.32) 36%,transparent 72%),radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1px),rgba(255,150,70,.34) calc(var(--orbit-r) + 6px),rgba(255,116,42,.10) calc(var(--orbit-r) + 46px),transparent calc(var(--orbit-r) + 130px))}
 .poster .light{position:absolute;inset:0;background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1.6px),rgba(255,240,216,.95) calc(var(--orbit-r) - .3px),rgba(255,240,216,.95) var(--orbit-r),transparent calc(var(--orbit-r) + .9px))}
-.poster .pcontent{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:56px}
-.pk-eyebrow{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;font-size:19px;color:var(--coral)}
+.poster .pcontent{position:relative;z-index:2;height:100%}
+.pk-free{position:absolute;top:6%;right:7%;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+.pk-free b{color:var(--flame);font-weight:600}
+.pk-top{position:absolute;left:0;right:0;top:0;height:var(--line-y);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:0 6%;text-align:center}
+.pk-below{position:absolute;left:0;right:0;top:calc(var(--line-y) + 6%);text-align:center;color:var(--ash);font-family:"IBM Plex Sans Thai",sans-serif}
+.pk-below b{color:var(--bone)}
 .pk-title{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:.98;white-space:nowrap;text-shadow:3px 3px 0 var(--coral-deep),6px 6px 0 var(--coral-shadow)}
 .pk-title .hash{color:var(--flame)}
 .pk-tag{font-family:"Silkscreen",monospace;color:var(--flame);text-shadow:2px 2px 0 rgba(122,46,20,.7)}
-.pk-date{font-family:"IBM Plex Mono",monospace;color:var(--bone);border:1px solid var(--line);background:rgba(30,16,10,.7);padding:12px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;width:max-content}
-.pk-date .dot{width:12px;height:12px;border-radius:50%;background:var(--glow);box-shadow:0 0 14px 3px rgba(255,120,45,.8)}
-.pk-spk{display:flex;align-items:center;gap:18px}
-.pk-av{border-radius:50%;flex:0 0 auto;border:1px solid var(--line)}
-.pk-name{font-weight:700;color:var(--bone)}
-.pk-role{color:var(--ash)}
-.pk-more{font-family:"IBM Plex Mono",monospace;color:var(--glow-soft)}
-.pk-badge{font-family:"IBM Plex Mono",monospace;color:var(--flame);border:1px solid var(--coral-deep);background:rgba(30,16,10,.6);padding:12px 24px;border-radius:999px;width:max-content}
-.pk-badge b{color:var(--bone)}
-.pk-orga{color:var(--ash)}.pk-orga b{color:var(--bone)}
-.pk-venue{font-family:"IBM Plex Mono",monospace;color:var(--glow-soft)}
-
-/* PORTRAIT mode */
-.poster[data-mode="portrait"] .pcontent{gap:30px;padding:60px}
-.poster[data-mode="portrait"] .pk-title{font-size:80px}
-.poster[data-mode="portrait"] .pk-tag{font-size:36px;margin-top:12px}
-.poster[data-mode="portrait"] .pk-date{font-size:26px}
-.poster[data-mode="portrait"] .pk-venue{font-size:22px}
-.poster[data-mode="portrait"] .pk-av{width:92px;height:92px}
-.poster[data-mode="portrait"] .pk-name{font-size:30px}
-.poster[data-mode="portrait"] .pk-role{font-size:22px}
-.poster[data-mode="portrait"] .pk-more{font-size:24px;margin-top:6px}
-.poster[data-mode="portrait"] .pk-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.poster[data-mode="portrait"] .pk-orga{font-size:24px}
-.poster[data-mode="portrait"] .pk-badge{font-size:24px}
-
-/* LANDSCAPE mode */
-.poster[data-mode="landscape"] .pcontent{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;padding:52px 60px;align-content:center}
-.poster[data-mode="landscape"] .col{display:flex;flex-direction:column;gap:20px;justify-content:center}
-.poster[data-mode="landscape"] .pk-title{font-size:56px}
-.poster[data-mode="landscape"] .pk-tag{font-size:28px;margin-top:8px}
-.poster[data-mode="landscape"] .pk-date{font-size:22px}
-.poster[data-mode="landscape"] .pk-venue{font-size:19px}
-.poster[data-mode="landscape"] .pk-av{width:64px;height:64px}
-.poster[data-mode="landscape"] .pk-name{font-size:24px}
-.poster[data-mode="landscape"] .pk-role{font-size:18px}
-.poster[data-mode="landscape"] .pk-more{font-size:20px}
-.poster[data-mode="landscape"] .pk-badge{font-size:19px}
-.poster[data-mode="landscape"] .pk-orga{font-size:19px}
+.pk-chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.pk-chip{display:inline-flex;align-items:center;gap:12px;font-family:"IBM Plex Mono",monospace;color:var(--bone);background:rgba(22,13,8,.42);border:1px solid rgba(255,180,120,.16);border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pk-chip .dot{width:12px;height:12px;border-radius:50%;background:var(--glow);box-shadow:0 0 14px 3px rgba(255,120,45,.8)}
+.poster[data-mode="portrait"] .pk-free{font-size:22px}
+.poster[data-mode="portrait"] .pk-title{font-size:68px}
+.poster[data-mode="portrait"] .pk-tag{font-size:32px;margin-top:4px}
+.poster[data-mode="portrait"] .pk-chip{font-size:24px;padding:14px 26px}
+.poster[data-mode="portrait"] .pk-below{font-size:26px}
 .poster[data-mode="landscape"]{--line-y:80%}
-.poster[data-mode="landscape"] .pk-speakers{display:flex;flex-direction:column;gap:16px}
+.poster[data-mode="landscape"] .pk-free{font-size:19px}
+.poster[data-mode="landscape"] .pk-title{font-size:62px}
+.poster[data-mode="landscape"] .pk-tag{font-size:28px;margin-top:4px}
+.poster[data-mode="landscape"] .pk-chip{font-size:20px;padding:11px 20px}
+.poster[data-mode="landscape"] .pk-below{font-size:22px}
 
 /* footer */
 .site-foot{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:clamp(3rem,7vw,4.5rem) var(--pad) 3rem;text-align:center}

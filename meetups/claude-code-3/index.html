@@ -160,29 +160,18 @@
 <script>
 /* poster preview + size switch. Capture (PNG) is generated author-time; this is the on-page UI. */
 (function(){
-  var AV_P='width:92px;height:92px', AV_L='width:64px;height:64px';
-  function speakers(mode){
-    return '<div class="pk-speakers"><div class="pk-spk"><img class="pk-av" style="'+(mode==="portrait"?AV_P:AV_L)+'" src="assets/speakers/siriwat.svg" alt=""/>'
-      +'<div><div class="pk-name">Siriwat Kunaporn</div><div class="pk-role">UI Engineer · MUI</div></div></div>'
-      +'<div class="pk-more">+ 3 more speakers · TBA</div></div>';
-  }
-  var PORTRAIT=function(){return ''
-    +''
-    +'<div><div class="pk-title">CLAUDE<br>CODE<br>SHARING <span class="hash">#3</span></div><div class="pk-tag">Claude Code on Devices</div></div>'
-    +'<div class="pk-date"><span class="dot"></span>19 Aug 2026 · 18:00</div>'
-    +'<div class="pk-venue">Agoda Thailand · One Bangkok</div>'
-    +speakers("portrait")
-    +'<div class="pk-foot"><div class="pk-orga">organized by <b>Prompt ไปวันๆ</b></div><div class="pk-badge"><b>FREE</b> Offline</div></div>';};
-  var LANDSCAPE=function(){return ''
-    +'<div class="col">'
-      +''
-      +'<div class="pk-title">CLAUDE<br>CODE<br>SHARING <span class="hash">#3</span></div>'
+  var TEMPLATE=function(){return ''
+    +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
+    +'<div class="pk-top">'
+      +'<div class="pk-title">CLAUDE CODE<br>SHARING <span class="hash">#3</span></div>'
       +'<div class="pk-tag">Claude Code on Devices</div>'
-      +'<div class="pk-date"><span class="dot"></span>19 Aug 2026 · 18:00</div>'
-      +'<div class="pk-venue">Agoda Thailand · One Bangkok</div>'
-      +'<div class="pk-badge"><b>FREE</b> Offline · Prompt ไปวันๆ</div>'
+      +'<div class="pk-chips">'
+        +'<span class="pk-chip"><span class="dot"></span>19 Aug 2026 · 18:00–21:00</span>'
+        +'<span class="pk-chip">Agoda Thailand · One Bangkok</span>'
+      +'</div>'
     +'</div>'
-    +'<div class="col">'+speakers("landscape")+'</div>';};
+    +'<div class="pk-below">organized by <b>Prompt ไปวันๆ</b></div>';};
+  var PORTRAIT=TEMPLATE, LANDSCAPE=TEMPLATE;
   var names={'1200x630':'Facebook Link','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster','1200x628':'Eventpop Cover'};
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
       scaler=document.getElementById('scaler'),cap=document.getElementById('cap'),dl=document.getElementById('dl');
