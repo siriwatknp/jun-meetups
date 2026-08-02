@@ -1,0 +1,9 @@
+.claude/
+docs/
+tools/
+CONTEXT.md
+README.md
+package.json
+.playwright-cli/
+.gitignore
+.nojekyll
