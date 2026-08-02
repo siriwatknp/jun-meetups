@@ -47,9 +47,11 @@ a{color:inherit;text-decoration:none}
 .orga-line{display:flex;align-items:center;gap:.6rem;color:var(--ash);font-size:.9rem;margin-top:.5rem}
 .orga-line strong{color:var(--bone)}
 .orga-line img{width:34px;height:34px}
-.horizon{position:absolute;inset:0;z-index:1;pointer-events:none}
-.horizon::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,106,31,.07) 54%,rgba(255,120,45,.34) 66%,rgba(255,150,70,.55) 68%,rgba(18,8,5,.92) 70.4%,var(--void) 88%)}
-.horizon::after{content:"";position:absolute;left:7%;right:7%;top:67.8%;height:2px;background:linear-gradient(90deg,transparent,#ffe1b4 45%,#fff 50%,#ffe1b4 55%,transparent);box-shadow:0 0 26px 6px rgba(255,150,60,.7),0 0 70px 20px rgba(255,110,35,.35);border-radius:50%}
+.horizon{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+/* atmospheric glow rising off the limb into space */
+.horizon::before{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:150%;height:60%;background:radial-gradient(ellipse 60% 95% at 50% 100%,rgba(255,134,54,.40),rgba(255,106,31,.10) 46%,transparent 66%)}
+/* the planet: dark body with a glowing curved limb (Earth from space) */
+.horizon::after{content:"";position:absolute;left:50%;top:70%;transform:translateX(-50%);width:220%;height:150vh;border-radius:50%;background:radial-gradient(ellipse 100% 30% at 50% 0%,rgba(255,140,60,.18),transparent 55%),var(--void);box-shadow:0 -1px 0 1.5px rgba(255,230,192,.85),0 2px 30px 4px rgba(255,150,60,.5),0 6px 100px 26px rgba(255,110,35,.26)}
 
 /* generic section */
 .section{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--line)}
@@ -109,8 +111,8 @@ a{color:inherit;text-decoration:none}
 
 /* the poster artwork */
 .poster{position:absolute;top:0;left:0;transform-origin:top left;overflow:hidden;background:var(--void);color:var(--bone);box-shadow:0 24px 60px -20px rgba(0,0,0,.8);border:1px solid #201009}
-.poster .stagelight{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 40%,rgba(255,106,31,.07) 54%,rgba(255,120,45,.34) 66%,rgba(255,150,70,.55) 68%,rgba(18,8,5,.92) 70.4%,var(--void) 90%)}
-.poster .light{position:absolute;left:7%;right:7%;top:67.8%;height:3px;background:linear-gradient(90deg,transparent,#ffe1b4,#fff,#ffe1b4,transparent);box-shadow:0 0 40px 10px rgba(255,150,60,.6);border-radius:50%}
+.poster .stagelight{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:150%;height:46%;pointer-events:none;background:radial-gradient(ellipse 58% 95% at 50% 100%,rgba(255,134,54,.40),rgba(255,106,31,.10) 46%,transparent 66%)}
+.poster .light{position:absolute;left:50%;top:66%;transform:translateX(-50%);width:200%;height:200%;border-radius:50%;background:radial-gradient(ellipse 100% 24% at 50% 0%,rgba(255,140,60,.16),transparent 55%),var(--void);box-shadow:0 -1px 0 1.5px rgba(255,230,192,.85),0 2px 26px 4px rgba(255,150,60,.5),0 6px 90px 22px rgba(255,110,35,.26)}
 .poster .pcontent{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;padding:56px}
 .pk-eyebrow{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;font-size:19px;color:var(--coral)}
 .pk-title{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:.98;text-shadow:3px 3px 0 var(--coral-deep),6px 6px 0 var(--coral-shadow)}
@@ -155,8 +157,8 @@ a{color:inherit;text-decoration:none}
 .poster[data-mode="landscape"] .pk-more{font-size:20px}
 .poster[data-mode="landscape"] .pk-badge{font-size:19px}
 .poster[data-mode="landscape"] .pk-orga{font-size:19px}
-.poster[data-mode="landscape"] .light{top:auto;bottom:-4%;left:-6%;right:42%}
-.poster[data-mode="landscape"] .stagelight{background:radial-gradient(85% 70% at 16% 100%,rgba(255,120,45,.4),transparent 60%)}
+.poster[data-mode="landscape"] .light{top:80%}
+.poster[data-mode="landscape"] .stagelight{height:34%}
 .poster[data-mode="landscape"] .pk-speakers{display:flex;flex-direction:column;gap:16px}
 
 /* footer */
