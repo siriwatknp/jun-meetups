@@ -131,8 +131,12 @@
   <!-- POSTER -->
   <section class="section poster-sec" id="poster"><div class="wrap">
     <p class="eyebrow">TAKE THE POSTER</p>
-    <h2>Download this event</h2>
-    <p class="intro">Pick a size — you get a pixel-perfect PNG, ready to post. Preview updates live.</p>
+    <h2>Download the posters</h2>
+    <p class="intro">Two sets — event or speakers — in every size. Pick one, get a pixel-perfect PNG. Preview updates live.</p>
+    <div class="variant-toggle">
+      <button class="vbtn on" data-variant="event">Event</button>
+      <button class="vbtn" data-variant="speakers">Speakers</button>
+    </div>
     <div class="groups">
       <div><div class="group-label">Facebook</div><div class="pills">
         <button class="pill on" data-w="1200" data-h="630" data-mode="landscape" data-file="fb-link"><b>Link</b><span>1200×630</span></button>
@@ -145,7 +149,7 @@
     </div>
     <div class="stage">
       <div class="frame"><div class="scaler" id="scaler">
-        <div class="poster" id="poster-art" data-mode="landscape">
+        <div class="poster" id="poster-art" data-mode="landscape" data-variant="event">
           <div class="stagelight"></div><div class="light"></div>
           <div class="pcontent" id="pcontent"></div>
         </div>
@@ -168,9 +172,9 @@
 </footer>
 
 <script>
-/* poster preview + size switch. Capture (PNG) is generated author-time; this is the on-page UI. */
+/* poster preview + size/variant switch. Capture (PNG) is generated author-time. */
 (function(){
-  var TEMPLATE=function(){return ''
+  var EVENT=function(){return ''
     +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
     +'<div class="pk-top">'
       +'<div class="pk-title">CLAUDE CODE<br>SHARING <span class="hash">#3</span></div>'
@@ -181,34 +185,64 @@
       +'</div>'
     +'</div>'
     +'<div class="pk-below">organized by <b>Prompt ไปวันๆ</b></div>';};
-  var PORTRAIT=TEMPLATE, LANDSCAPE=TEMPLATE;
+  function row(av,talk,who,tba){return '<div class="spp-row'+(tba?' spp-tba':'')+'">'
+    +(tba?'<span class="spp-av spp-avq">?</span>':'<img class="spp-av" src="assets/speakers/'+av+'" alt=""/>')
+    +'<div class="spp-txt"><div class="spp-talk">'+talk+'</div><div class="spp-who">'+who+'</div></div></div>';}
+  var SPEAKERS=function(){return ''
+    +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
+    +'<div class="spp-brandblock">'
+      +'<div class="spp-brand">CLAUDE CODE SHARING <span class="hash">#3</span></div>'
+      +'<div class="spp-tag">Claude Code on Devices</div>'
+    +'</div>'
+    +'<div class="spp-main">'
+      +'<div class="spp-label">— Speakers —</div>'
+      +'<div class="spp-list">'
+        +row('siriwat.png','Leveraging iOS ecosystem for agentic coding','ศิริวัชร์ คุณาพร (จุ้น) · MUI',false)
+        +row('manassarn.png','Work anywhere with Claude Code in the cloud','มนัสศานติ์ มนูญชัย (หนุ่ม) · Eventpop, TokenMe',false)
+        +row('','More speaker','To be announced',true)
+      +'</div>'
+    +'</div>'
+    +'<div class="spp-footblock">'
+      +'<div class="pk-chips">'
+        +'<span class="pk-chip"><span class="dot"></span>19 Aug 2026 · 18:00–21:00</span>'
+        +'<span class="pk-chip">Agoda Thailand · One Bangkok</span>'
+      +'</div>'
+      +'<div class="pk-below2">organized by <b>Prompt ไปวันๆ</b></div>'
+    +'</div>';};
+  var TPL={event:EVENT,speakers:SPEAKERS}, DIR={event:'posters/',speakers:'posters/speakers/'};
+  var variant='event';
   var names={'1200x630':'Facebook Link','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster','1200x628':'Eventpop Cover'};
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
       scaler=document.getElementById('scaler'),cap=document.getElementById('cap'),dl=document.getElementById('dl');
   function render(w,h,mode,file){
-    art.dataset.mode=mode;
-    pc.innerHTML = mode==='portrait'?PORTRAIT():LANDSCAPE();
+    art.dataset.mode=mode; art.dataset.variant=variant;
+    pc.innerHTML=TPL[variant]();
     art.style.width=w+'px';art.style.height=h+'px';
-    var maxW=Math.min(520,scaler.parentElement.clientWidth-8),maxH=640,s=Math.min(maxW/w,maxH/h);
-    art.style.transform='scale('+s+')';
-    scaler.style.width=(w*s)+'px';scaler.style.height=(h*s)+'px';
+    var maxW=Math.min(520,scaler.parentElement.clientWidth-8),maxH=640,sc=Math.min(maxW/w,maxH/h);
+    art.style.transform='scale('+sc+')';
+    scaler.style.width=(w*sc)+'px';scaler.style.height=(h*sc)+'px';
     var key=w+'x'+h;cap.textContent=names[key]+' · '+w+' × '+h+' px';
-    dl.textContent='⬇ Download PNG · '+w+'×'+h;dl.setAttribute('href','posters/'+file+'.png');
+    dl.textContent='⬇ Download PNG · '+w+'×'+h;dl.setAttribute('href',DIR[variant]+file+'.png');
   }
-  // Capture hook for the poster generator: renders at true bucket px (scale 1).
-  window.posterCapture=function(w,h,mode){
-    art.dataset.mode=mode;pc.innerHTML=mode==='portrait'?PORTRAIT():LANDSCAPE();
-    art.style.cssText+=';position:fixed;top:0;left:0;z-index:99999;transform:none;'+
-      'width:'+w+'px;height:'+h+'px;';
+  window.posterCapture=function(w,h,mode,v){
+    variant=v||variant; art.dataset.mode=mode; art.dataset.variant=variant; pc.innerHTML=TPL[variant]();
+    art.style.cssText+=';position:fixed;top:0;left:0;z-index:99999;transform:none;width:'+w+'px;height:'+h+'px;';
   };
   var pills=document.querySelectorAll('.pill');
+  function currentPill(){return document.querySelector('.pill.on');}
   pills.forEach(function(p){p.addEventListener('click',function(){
     pills.forEach(function(x){x.classList.remove('on')});p.classList.add('on');
     render(+p.dataset.w,+p.dataset.h,p.dataset.mode,p.dataset.file);
   });});
+  var vbtns=document.querySelectorAll('.vbtn');
+  vbtns.forEach(function(b){b.addEventListener('click',function(){
+    vbtns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+    variant=b.dataset.variant;var on=currentPill();
+    if(on)render(+on.dataset.w,+on.dataset.h,on.dataset.mode,on.dataset.file);
+  });});
   function boot(){render(1200,630,'landscape','fb-link');}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){setTimeout(boot,50)});}else{window.addEventListener('load',boot);}
-  window.addEventListener('resize',function(){var on=document.querySelector('.pill.on');if(on)render(+on.dataset.w,+on.dataset.h,on.dataset.mode,on.dataset.file);});
+  window.addEventListener('resize',function(){var on=currentPill();if(on)render(+on.dataset.w,+on.dataset.h,on.dataset.mode,on.dataset.file);});
 })();
 </script>
 <script>

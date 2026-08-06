@@ -170,3 +170,64 @@ a{color:inherit;text-decoration:none}
 .cd-lbl{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash-dim)}
 .cd-sep{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:clamp(1.6rem,5vw,2.8rem);line-height:1;color:var(--ash-dim);margin-top:-.02em}
 [hidden]{display:none!important}
+
+/* poster variant toggle */
+.variant-toggle{display:inline-flex;gap:.3rem;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.25rem;margin:0 0 1rem}
+.vbtn{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.06em;color:var(--ash);background:transparent;border:none;border-radius:9px;padding:.5rem 1.1rem;cursor:pointer;transition:.15s}
+.vbtn:hover{color:var(--flame)}
+.vbtn.on{background:linear-gradient(135deg,rgba(255,157,107,.18),rgba(255,106,31,.12));color:var(--flame)}
+
+/* ===== SPEAKERS poster variant ===== */
+.poster[data-variant="speakers"] .pcontent{display:grid;height:100%;position:relative}
+.spp-brandblock{grid-area:brand;display:flex;flex-direction:column;gap:.35em;justify-content:flex-start}
+.spp-brand{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:1;text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow)}
+.spp-brand .hash{color:var(--flame)}
+.spp-tag{font-family:"Silkscreen",monospace;color:var(--flame);text-shadow:1px 1px 0 rgba(122,46,20,.7)}
+.spp-main{grid-area:main;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.spp-label{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;text-transform:uppercase;color:var(--coral)}
+.spp-list{display:flex;flex-direction:column}
+.spp-row{display:flex;align-items:center}
+.spp-av{border-radius:50%;object-fit:cover;flex:0 0 auto;border:1px solid var(--line)}
+.spp-avq{display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#2a1a12,#7a5238);color:#fff;font-family:"IBM Plex Sans Thai",sans-serif}
+.spp-talk{font-weight:700;color:var(--bone);line-height:1.22}
+.spp-who{color:var(--ash)}
+.spp-tba .spp-talk{color:var(--ash)}
+.spp-footblock{grid-area:foot;display:flex;flex-direction:column}
+.pk-below2{color:var(--ash)} .pk-below2 b{color:var(--bone)}
+
+/* portrait: stacked, list is the centrepiece */
+.poster[data-variant="speakers"][data-mode="portrait"]{--line-y:90%}
+.poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "foot";padding:120px 60px 60px;text-align:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .pk-free{top:4%}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-brandblock{align-items:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-brand{font-size:50px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-tag{font-size:24px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-main{gap:28px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-label{font-size:21px;text-align:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-list{gap:34px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-row{gap:24px;text-align:left}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-av{width:112px;height:112px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-avq{font-size:46px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-talk{font-size:32px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-who{font-size:22px;margin-top:5px}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-footblock{align-items:center;gap:16px}
+.poster[data-variant="speakers"][data-mode="portrait"] .pk-chip{font-size:20px;padding:12px 22px}
+.poster[data-variant="speakers"][data-mode="portrait"] .pk-below2{font-size:22px}
+
+/* landscape: brand top-left, foot bottom-left, list dominates the right */
+.poster[data-variant="speakers"][data-mode="landscape"]{--line-y:84%}
+.poster[data-variant="speakers"][data-mode="landscape"] .pcontent{grid-template-columns:.82fr 1.18fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand main" ". main" "foot main";column-gap:40px;padding:50px 58px 72px;align-items:stretch}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-brandblock{align-items:flex-start;text-align:left}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-brand{font-size:44px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-tag{font-size:21px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-main{gap:18px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-label{font-size:18px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-list{gap:22px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-row{gap:18px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-av{width:76px;height:76px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-avq{font-size:30px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-talk{font-size:23px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-who{font-size:17px;margin-top:3px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-footblock{align-items:flex-start;text-align:left;justify-content:flex-end;gap:14px}
+.poster[data-variant="speakers"][data-mode="landscape"] .pk-chip{font-size:17px;padding:9px 16px}
+.poster[data-variant="speakers"][data-mode="landscape"] .pk-below2{font-size:18px}
