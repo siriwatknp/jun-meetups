@@ -18,7 +18,7 @@ CODE=$(cat <<'JS'
 async (page) => {
   await page.setViewportSize({width:1260,height:1560});
   const dir="__OUT__";
-  const buckets=[["fb-link",1200,630,"landscape"],["ep-cover",1200,628,"landscape"],["fb-photo",1200,1500,"portrait"],["ep-poster",800,1132,"portrait"]];
+  const buckets=[["fb-link",1200,630,"landscape"],["fb-photo",1200,1500,"portrait"],["ep-poster",800,1132,"portrait"]];
   for(const b of buckets){
     var name=b[0],w=b[1],h=b[2],mode=b[3];
     await page.evaluate(function(a){window.posterCapture(a[0],a[1],a[2]);},[w,h,mode]);
