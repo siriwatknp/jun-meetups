@@ -179,10 +179,12 @@ a{color:inherit;text-decoration:none}
 
 /* ===== SPEAKERS poster variant ===== */
 .poster[data-variant="speakers"] .pcontent{display:grid;height:100%;position:relative}
+.poster[data-variant="speakers"] .pk-free{left:auto;right:6%;text-align:right}
 .spp-brandblock{grid-area:brand;display:flex;flex-direction:column;gap:.35em;justify-content:flex-start}
 .spp-brand{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:1;text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow)}
 .spp-brand .hash{color:var(--flame)}
 .spp-tag{font-family:"Silkscreen",monospace;color:var(--flame);text-shadow:1px 1px 0 rgba(122,46,20,.7)}
+.spp-chips{grid-area:chips;display:flex;flex-wrap:wrap;gap:12px}
 .spp-main{grid-area:main;display:flex;flex-direction:column;justify-content:center;min-height:0}
 .spp-label{font-family:"IBM Plex Mono",monospace;letter-spacing:.28em;text-transform:uppercase;color:var(--coral)}
 .spp-list{display:flex;flex-direction:column}
@@ -192,14 +194,16 @@ a{color:inherit;text-decoration:none}
 .spp-talk{font-weight:700;color:var(--bone);line-height:1.22}
 .spp-who{color:var(--ash)}
 .spp-tba .spp-talk{color:var(--ash)}
-.spp-footblock{grid-area:foot;display:flex;flex-direction:column}
-.pk-below2{color:var(--ash)} .pk-below2 b{color:var(--bone)}
+.spp-org{position:absolute;left:0;right:0;text-align:center;color:var(--ash)}
+.spp-org b{color:var(--bone)}
 
 /* portrait: stacked, list is the centrepiece */
 .poster[data-variant="speakers"][data-mode="portrait"]{--line-y:90%}
-.poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "foot";padding:120px 60px 60px;text-align:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "chips";padding:116px 60px 150px;text-align:center;justify-items:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .pk-free{top:4%}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-brandblock{align-items:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-chips{justify-content:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .spp-org{bottom:4.5%;font-size:22px}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-brand{font-size:50px}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-tag{font-size:24px}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-main{gap:28px}
@@ -210,14 +214,14 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-avq{font-size:46px}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-talk{font-size:32px}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-who{font-size:22px;margin-top:5px}
-.poster[data-variant="speakers"][data-mode="portrait"] .spp-footblock{align-items:center;gap:16px}
 .poster[data-variant="speakers"][data-mode="portrait"] .pk-chip{font-size:20px;padding:12px 22px}
-.poster[data-variant="speakers"][data-mode="portrait"] .pk-below2{font-size:22px}
 
 /* landscape: brand top-left, foot bottom-left, list dominates the right */
 .poster[data-variant="speakers"][data-mode="landscape"]{--line-y:84%}
-.poster[data-variant="speakers"][data-mode="landscape"] .pcontent{grid-template-columns:.82fr 1.18fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand main" ". main" "foot main";column-gap:40px;padding:50px 58px 72px;align-items:stretch}
+.poster[data-variant="speakers"][data-mode="landscape"] .pcontent{grid-template-columns:.86fr 1.14fr;grid-template-rows:auto auto 1fr;grid-template-areas:"brand main" "chips main" ".     main";column-gap:40px;padding:48px 58px 60px;align-items:start}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-brandblock{align-items:flex-start;text-align:left}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-chips{margin-top:26px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-org{bottom:6.5%;font-size:18px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-brand{font-size:44px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-tag{font-size:21px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-main{gap:18px}
@@ -228,6 +232,4 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-avq{font-size:30px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-talk{font-size:23px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-who{font-size:17px;margin-top:3px}
-.poster[data-variant="speakers"][data-mode="landscape"] .spp-footblock{align-items:flex-start;text-align:left;justify-content:flex-end;gap:14px}
 .poster[data-variant="speakers"][data-mode="landscape"] .pk-chip{font-size:17px;padding:9px 16px}
-.poster[data-variant="speakers"][data-mode="landscape"] .pk-below2{font-size:18px}
