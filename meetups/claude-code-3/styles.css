@@ -165,8 +165,8 @@ a{color:inherit;text-decoration:none}
 .countdown{display:flex;flex-direction:column;align-items:center;gap:.7rem}
 .cd-over{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--coral);opacity:.9}
 .cd-clock{display:flex;align-items:flex-start;gap:.55rem}
-.cd-unit{display:flex;flex-direction:column;align-items:center;gap:.4rem;min-width:2.4ch}
-.cd-num{font-family:"Silkscreen",monospace;font-weight:700;font-size:clamp(1.9rem,6vw,3.2rem);line-height:1;color:var(--flame);text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow)}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:.5rem;min-width:2.6ch}
+.cd-num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:clamp(2rem,6vw,3.3rem);line-height:1;color:var(--bone);font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .cd-lbl{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash-dim)}
-.cd-sep{font-family:"Silkscreen",monospace;font-size:clamp(1.3rem,4.5vw,2.3rem);line-height:1;color:var(--coral-deep);margin-top:.15em}
+.cd-sep{font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:clamp(1.6rem,5vw,2.8rem);line-height:1;color:var(--ash-dim);margin-top:-.02em}
 [hidden]{display:none!important}
