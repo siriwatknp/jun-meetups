@@ -37,7 +37,19 @@
     </div>
     <div class="hero-below">
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.eventpop.me/e/164118" target="_blank" rel="noopener">Register on Eventpop</a>
+        <div id="reg-countdown" class="countdown" hidden>
+          <p class="cd-over">Register in</p>
+          <div class="cd-clock">
+            <span class="cd-unit"><span class="cd-num" data-d>00</span><span class="cd-lbl">days</span></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span class="cd-num" data-h>00</span><span class="cd-lbl">hrs</span></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span class="cd-num" data-m>00</span><span class="cd-lbl">min</span></span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit"><span class="cd-num" data-s>00</span><span class="cd-lbl">sec</span></span>
+          </div>
+        </div>
+        <a id="reg-btn" class="btn btn-primary" href="https://www.eventpop.me/e/164118" target="_blank" rel="noopener">Register on Eventpop</a>
       </div>
       <p class="orga-line"><img src="assets/prompt-icon.png" alt=""/><span>organized by <strong>Prompt ไปวันๆ</strong></span></p>
     </div>
@@ -197,6 +209,30 @@
   function boot(){render(1200,630,'landscape','fb-link');}
   if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){setTimeout(boot,50)});}else{window.addEventListener('load',boot);}
   window.addEventListener('resize',function(){var on=document.querySelector('.pill.on');if(on)render(+on.dataset.w,+on.dataset.h,on.dataset.mode,on.dataset.file);});
+})();
+</script>
+<script>
+/* Registration countdown → swaps to the Register button when it opens.
+   TODO: set the real registration-open datetime (Asia/Bangkok, +07:00). */
+(function(){
+  var OPEN = new Date('2026-08-09T11:00:00+07:00'); // registration opens · Asia/Bangkok
+  var cd = document.getElementById('reg-countdown');
+  var btn = document.getElementById('reg-btn');
+  if(!cd || !btn) return;
+  var el = {d:cd.querySelector('[data-d]'),h:cd.querySelector('[data-h]'),m:cd.querySelector('[data-m]'),s:cd.querySelector('[data-s]')};
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var diff = OPEN - new Date();
+    if(diff <= 0){ cd.hidden = true; btn.hidden = false; return true; }
+    btn.hidden = true; cd.hidden = false;
+    var t = Math.floor(diff/1000);
+    var d = Math.floor(t/86400); t -= d*86400;
+    var h = Math.floor(t/3600);  t -= h*3600;
+    var m = Math.floor(t/60);    t -= m*60;
+    el.d.textContent=pad(d); el.h.textContent=pad(h); el.m.textContent=pad(m); el.s.textContent=pad(t);
+    return false;
+  }
+  if(!tick()){ var iv = setInterval(function(){ if(tick()) clearInterval(iv); }, 1000); }
 })();
 </script>
 </body>
