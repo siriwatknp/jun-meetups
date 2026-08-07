@@ -221,6 +221,7 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-mode="landscape"] .pcontent{grid-template-columns:.86fr 1.14fr;grid-template-rows:auto auto 1fr;grid-template-areas:"brand main" "chips main" ".     main";column-gap:40px;padding:48px 58px 60px;align-items:start}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-brandblock{align-items:flex-start;text-align:left}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-chips{margin-top:26px}
+.poster[data-variant="speakers"][data-mode="landscape"] .spp-main{align-self:stretch}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-org{bottom:6.5%;font-size:18px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-brand{font-size:44px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-tag{font-size:21px}
