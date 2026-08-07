@@ -101,6 +101,7 @@ a{color:inherit;text-decoration:none}
 .poster-sec .groups{display:flex;flex-wrap:wrap;gap:1.4rem;margin:1.4rem 0 1.1rem}
 .group-label{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ash-dim);margin-bottom:.5rem}
 .pills{display:flex;gap:.5rem;flex-wrap:wrap}
+.poster-sec .pills{margin-bottom:1.8rem}
 .pill{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:var(--ash);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.5rem .85rem;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:.15rem;line-height:1.1;text-align:left}
 .pill b{color:var(--bone);font-weight:600}
 .pill span{font-size:.66rem;color:var(--ash-dim)}
@@ -172,7 +173,7 @@ a{color:inherit;text-decoration:none}
 [hidden]{display:none!important}
 
 /* poster variant toggle */
-.variant-toggle{display:inline-flex;gap:.3rem;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.25rem;margin:0 0 1rem}
+.variant-toggle{display:inline-flex;gap:.3rem;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.25rem;margin:1.6rem 0 1rem}
 .vbtn{font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.06em;color:var(--ash);background:transparent;border:none;border-radius:9px;padding:.5rem 1.1rem;cursor:pointer;transition:.15s}
 .vbtn:hover{color:var(--flame)}
 .vbtn.on{background:linear-gradient(135deg,rgba(255,157,107,.18),rgba(255,106,31,.12));color:var(--flame)}
@@ -200,7 +201,7 @@ a{color:inherit;text-decoration:none}
 
 /* portrait: stacked, list is the centrepiece */
 .poster[data-variant="speakers"][data-mode="portrait"]{--line-y:90%}
-.poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "chips";padding:116px 60px 150px;text-align:center;justify-items:center}
+.poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "chips";padding:116px 76px 150px;text-align:center;justify-items:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .pk-free{top:4%;left:0;right:0;text-align:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-brandblock{align-items:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-chips{justify-content:center}
@@ -237,8 +238,8 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-mode="landscape"] .pk-chip{font-size:17px;padding:9px 16px}
 
 /* Facebook Photo 1200×1500 — larger, fills the taller canvas */
-.poster[data-variant="speakers"][data-size="1200x1500"] .pcontent{padding:84px 72px 156px}
-.poster[data-variant="speakers"][data-size="1200x1500"] .pk-free{font-size:26px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .pcontent{padding:132px 104px 150px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .pk-free{font-size:26px;top:3.4%}
 .poster[data-variant="speakers"][data-size="1200x1500"] .spp-brand{font-size:76px}
 .poster[data-variant="speakers"][data-size="1200x1500"] .spp-brand .bl{display:block}
 .poster[data-variant="speakers"][data-size="1200x1500"] .spp-tag{font-size:32px}
@@ -253,3 +254,6 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-size="1200x1500"] .spp-chips{gap:16px}
 .poster[data-variant="speakers"][data-size="1200x1500"] .pk-chip{font-size:26px;padding:14px 26px}
 .poster[data-variant="speakers"][data-size="1200x1500"] .spp-org{font-size:28px}
+
+/* inline organizer logo — scales with the surrounding text */
+.pk-logo{display:inline-block;width:1.5em;height:1.5em;border-radius:5px;vertical-align:middle;margin:0 .3em 0 .12em;position:relative;top:-.08em}
