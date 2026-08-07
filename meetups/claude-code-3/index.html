@@ -186,7 +186,7 @@
   var SPEAKERS=function(){return ''
     +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
     +'<div class="spp-brandblock">'
-      +'<div class="spp-brand">CLAUDE CODE SHARING <span class="hash">#3</span></div>'
+      +'<div class="spp-brand"><span class="bl">CLAUDE CODE</span> <span class="bl">SHARING <span class="hash">#3</span></span></div>'
       +'<div class="spp-tag">Claude Code on Devices</div>'
     +'</div>'
     +'<div class="spp-chips">'
@@ -208,7 +208,7 @@
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
       scaler=document.getElementById('scaler'),cap=document.getElementById('cap'),dl=document.getElementById('dl');
   function render(w,h,mode,file){
-    art.dataset.mode=mode; art.dataset.variant=variant;
+    art.dataset.mode=mode; art.dataset.variant=variant; art.dataset.size=w+'x'+h;
     pc.innerHTML=TPL[variant]();
     art.style.width=w+'px';art.style.height=h+'px';
     var maxW=Math.min(520,scaler.parentElement.clientWidth-8),maxH=640,sc=Math.min(maxW/w,maxH/h);
@@ -218,7 +218,7 @@
     dl.textContent='⬇ Download PNG · '+w+'×'+h;dl.setAttribute('href',DIR[variant]+file+'.png');
   }
   window.posterCapture=function(w,h,mode,v){
-    variant=v||variant; art.dataset.mode=mode; art.dataset.variant=variant; pc.innerHTML=TPL[variant]();
+    variant=v||variant; art.dataset.mode=mode; art.dataset.variant=variant; art.dataset.size=w+'x'+h; pc.innerHTML=TPL[variant]();
     art.style.cssText+=';position:fixed;top:0;left:0;z-index:99999;transform:none;width:'+w+'px;height:'+h+'px;';
   };
   var pills=document.querySelectorAll('.pill');

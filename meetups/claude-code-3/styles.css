@@ -183,6 +183,7 @@ a{color:inherit;text-decoration:none}
 .spp-brandblock{grid-area:brand;display:flex;flex-direction:column;gap:.35em;justify-content:flex-start}
 .spp-brand{font-family:"Silkscreen",monospace;font-weight:700;color:var(--coral);line-height:1;text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow)}
 .spp-brand .hash{color:var(--flame)}
+.spp-brand .bl{white-space:nowrap}
 .spp-tag{font-family:"Silkscreen",monospace;color:var(--flame);text-shadow:1px 1px 0 rgba(122,46,20,.7)}
 .spp-chips{grid-area:chips;display:flex;flex-wrap:wrap;gap:12px}
 .spp-main{grid-area:main;display:flex;flex-direction:column;justify-content:center;min-height:0}
@@ -200,7 +201,7 @@ a{color:inherit;text-decoration:none}
 /* portrait: stacked, list is the centrepiece */
 .poster[data-variant="speakers"][data-mode="portrait"]{--line-y:90%}
 .poster[data-variant="speakers"][data-mode="portrait"] .pcontent{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"brand" "main" "chips";padding:116px 60px 150px;text-align:center;justify-items:center}
-.poster[data-variant="speakers"][data-mode="portrait"] .pk-free{top:4%}
+.poster[data-variant="speakers"][data-mode="portrait"] .pk-free{top:4%;left:0;right:0;text-align:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-brandblock{align-items:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-chips{justify-content:center}
 .poster[data-variant="speakers"][data-mode="portrait"] .spp-org{bottom:4.5%;font-size:22px}
@@ -234,3 +235,21 @@ a{color:inherit;text-decoration:none}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-talk{font-size:23px}
 .poster[data-variant="speakers"][data-mode="landscape"] .spp-who{font-size:17px;margin-top:3px}
 .poster[data-variant="speakers"][data-mode="landscape"] .pk-chip{font-size:17px;padding:9px 16px}
+
+/* Facebook Photo 1200×1500 — larger, fills the taller canvas */
+.poster[data-variant="speakers"][data-size="1200x1500"] .pcontent{padding:84px 72px 156px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .pk-free{font-size:26px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-brand{font-size:76px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-brand .bl{display:block}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-tag{font-size:32px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-main{gap:40px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-label{font-size:26px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-list{gap:46px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-row{gap:30px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-av{width:150px;height:150px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-avq{font-size:60px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-talk{font-size:41px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-who{font-size:27px;margin-top:7px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-chips{gap:16px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .pk-chip{font-size:26px;padding:14px 26px}
+.poster[data-variant="speakers"][data-size="1200x1500"] .spp-org{font-size:28px}
