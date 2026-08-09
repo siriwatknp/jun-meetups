@@ -257,3 +257,21 @@ a{color:inherit;text-decoration:none}
 
 /* inline organizer logo — scales with the surrounding text */
 .pk-logo{display:inline-block;width:1.5em;height:1.5em;border-radius:5px;vertical-align:middle;margin:0 .3em 0 .12em;position:relative;top:-.08em}
+
+/* ===== REGISTER poster variant (fb-photo 1200×1500) ===== */
+.poster[data-variant="register"]{--line-y:90%}
+.poster[data-variant="register"] .pcontent{display:flex;flex-direction:column;align-items:center;text-align:center;height:100%;padding:118px 92px 84px;position:relative}
+.poster[data-variant="register"] .pk-free{left:0;right:0;text-align:center;top:3.6%;font-size:24px}
+.rg-brand{font-family:"Silkscreen",monospace;font-weight:700;font-size:56px;line-height:1;color:var(--coral);text-shadow:2px 2px 0 var(--coral-deep),4px 4px 0 var(--coral-shadow)}
+.rg-brand .bl{white-space:nowrap;display:block}
+.rg-brand .hash{color:var(--flame)}
+.rg-tag{font-family:"Silkscreen",monospace;font-size:26px;color:var(--flame);text-shadow:1px 1px 0 rgba(122,46,20,.7);margin-top:14px}
+.rg-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;min-height:0}
+.rg-cta{font-family:"IBM Plex Sans Thai",sans-serif;font-weight:700;font-size:82px;line-height:1.02;color:var(--bone)}
+.rg-time{font-family:"IBM Plex Mono",monospace;font-size:40px;color:var(--flame);display:inline-flex;align-items:center;gap:14px}
+.rg-time .rg-dot{width:16px;height:16px;border-radius:50%;background:var(--glow);box-shadow:0 0 16px 3px rgba(255,120,45,.85)}
+.rg-qr{background:#fff;border-radius:26px;padding:26px;box-shadow:0 26px 64px -20px rgba(0,0,0,.85);margin-top:6px}
+.rg-qr img{display:block;width:372px;height:372px}
+.rg-url{font-family:"IBM Plex Mono",monospace;font-size:27px;color:var(--ash);letter-spacing:.02em}
+.rg-foot{font-family:"IBM Plex Sans Thai",sans-serif;font-size:28px;color:var(--ash)}
+.rg-foot b{color:var(--bone)}

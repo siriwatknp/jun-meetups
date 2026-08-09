@@ -72,15 +72,15 @@
     <h2>Who's sharing</h2>
     <p class="intro">Three speakers, one night.</p>
     <div class="spk-grid">
-      <div class="spk">
+      <div class="spk" data-session="ios-agentic-coding">
         <img src="assets/speakers/siriwat.png" alt=""/>
         <div><p class="s-talk">Leveraging iOS ecosystem for agentic coding</p><p class="s-who">ศิริวัชร์ คุณาพร (จุ้น) · UI Engineer at MUI</p></div>
       </div>
-      <div class="spk">
+      <div class="spk" data-session="claude-code-cloud">
         <img src="assets/speakers/manassarn.png" alt=""/>
         <div><p class="s-talk">Work anywhere with Claude Code in the cloud</p><p class="s-who">มนัสศานติ์ มนูญชัย (หนุ่ม) · @ Eventpop, TokenMe</p></div>
       </div>
-      <div class="spk">
+      <div class="spk" data-session="orca-ade">
         <img src="assets/speakers/peerapat.png" alt=""/>
         <div><p class="s-talk">Managing Multiple Coding Agents with Orca ADE</p><p class="s-who">พีรพัฒน์ จั่นขาว (พี) · Lead Product Engineer at Envisso</p></div>
       </div>
@@ -94,10 +94,10 @@
     <p class="intro">Draft agenda · 17:30–21:00. Talk slots fill in as speakers confirm.</p>
     <div class="sched">
       <div class="sched-row"><span class="sched-time">17:30–18:30</span><span class="sched-label">Registration</span></div>
-      <div class="sched-row talk"><span class="sched-time">18:35–19:05</span><span class="sched-label">Leveraging iOS ecosystem for agentic coding<br><span class="sched-sub">ศิริวัชร์ คุณาพร (จุ้น) · MUI</span></span></div>
-      <div class="sched-row talk"><span class="sched-time">19:10–19:40</span><span class="sched-label">Work anywhere with Claude Code in the cloud<br><span class="sched-sub">มนัสศานติ์ มนูญชัย (หนุ่ม) · Eventpop, TokenMe</span></span></div>
+      <div class="sched-row talk" data-session="ios-agentic-coding"><span class="sched-time">18:35–19:05</span><span class="sched-label">Leveraging iOS ecosystem for agentic coding<br><span class="sched-sub">ศิริวัชร์ คุณาพร (จุ้น) · MUI</span></span></div>
+      <div class="sched-row talk" data-session="claude-code-cloud"><span class="sched-time">19:10–19:40</span><span class="sched-label">Work anywhere with Claude Code in the cloud<br><span class="sched-sub">มนัสศานติ์ มนูญชัย (หนุ่ม) · Eventpop, TokenMe</span></span></div>
       <div class="sched-row"><span class="sched-time">19:40–20:00</span><span class="sched-label">Break</span></div>
-      <div class="sched-row talk"><span class="sched-time">20:00–20:30</span><span class="sched-label">Managing Multiple Coding Agents with Orca ADE<br><span class="sched-sub">พีรพัฒน์ จั่นขาว (พี) · Envisso</span></span></div>
+      <div class="sched-row talk" data-session="orca-ade"><span class="sched-time">20:00–20:30</span><span class="sched-label">Managing Multiple Coding Agents with Orca ADE<br><span class="sched-sub">พีรพัฒน์ จั่นขาว (พี) · Envisso</span></span></div>
       <div class="sched-row"><span class="sched-time">20:30–21:00</span><span class="sched-label">Networking</span></div>
     </div>
   </div></section>
@@ -202,7 +202,18 @@
       +'</div>'
     +'</div>'
     +'<div class="spp-org">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
-  var TPL={event:EVENT,speakers:SPEAKERS}, DIR={event:'posters/',speakers:'posters/speakers/'};
+  var REGISTER=function(){return ''
+    +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
+    +'<div class="rg-brand"><span class="bl">CLAUDE CODE</span> <span class="bl">SHARING <span class="hash">#3</span></span></div>'
+    +'<div class="rg-tag">Claude Code on Devices</div>'
+    +'<div class="rg-center">'
+      +'<div class="rg-cta">Register Today</div>'
+      +'<div class="rg-time"><span class="rg-dot"></span>Today · 11:00</div>'
+      +'<div class="rg-qr"><img src="assets/qr-eventpop.png" alt="Scan to register"/></div>'
+      +'<div class="rg-url">eventpop.me/e/164118</div>'
+    +'</div>'
+    +'<div class="rg-foot">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
+  var TPL={event:EVENT,speakers:SPEAKERS,register:REGISTER}, DIR={event:'posters/',speakers:'posters/speakers/',register:'posters/'};
   var variant='event';
   var names={'1200x630':'Facebook / Eventpop Cover','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster'};
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
