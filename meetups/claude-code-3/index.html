@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/favicon-180.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css?v=2"/>
+<link rel="stylesheet" href="styles.css?v=3"/>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -141,6 +141,7 @@
       <button class="pill on" data-w="1200" data-h="630" data-mode="landscape" data-file="fb-link"><b>Facebook/Eventpop cover</b><span>1200×630</span></button>
       <button class="pill" data-w="1200" data-h="1500" data-mode="portrait" data-file="fb-photo"><b>Facebook photo</b><span>1200×1500</span></button>
       <button class="pill" data-w="800" data-h="1132" data-mode="portrait" data-file="ep-poster"><b>Eventpop poster</b><span>800×1132</span></button>
+      <button class="pill" data-w="1920" data-h="1080" data-mode="landscape" data-file="wide-16-9"><b>16:9 wide</b><span>1920×1080</span></button>
     </div>
     <div class="stage">
       <div class="frame"><div class="scaler" id="scaler">
@@ -152,6 +153,30 @@
       <div class="caption" id="cap">Facebook Link · 1200 × 630 px</div>
       <a class="btn btn-primary" id="dl" href="posters/fb-link.png" download>⬇ Download PNG · 1200×630</a>
       <div class="wys">What you see is exactly the file you get (WYSIWYG)</div>
+    </div>
+  </div></section>
+
+  <!-- ASSETS -->
+  <section class="section assets-sec"><div class="wrap">
+    <p class="eyebrow">ASSETS</p>
+    <h2>Brand &amp; sponsor logos</h2>
+    <p class="intro">Download logos for your posts, decks, and coverage.</p>
+    <div class="asset-grid">
+      <a class="asset-card" href="assets/download/prompt-logo.png" download="prompt-logo.png">
+        <span class="asset-thumb icon"><img src="assets/prompt-icon.png" alt=""/></span>
+        <span class="asset-body"><span class="asset-name">Prompt ไปวันๆ</span><span class="asset-meta">Organizer · PNG 1764px</span></span>
+        <span class="asset-dl">↓</span>
+      </a>
+      <a class="asset-card" href="assets/download/agoda-logo.png" download="agoda-logo.png">
+        <span class="asset-thumb light"><img src="assets/sponsors/agoda.png" alt=""/></span>
+        <span class="asset-body"><span class="asset-name">Agoda</span><span class="asset-meta">Venue host · PNG 447px</span></span>
+        <span class="asset-dl">↓</span>
+      </a>
+      <a class="asset-card" href="assets/download/claude-thailand-logo.png" download="claude-thailand-community-logo.png">
+        <span class="asset-thumb light"><img src="assets/sponsors/claude-th.png" alt=""/></span>
+        <span class="asset-body"><span class="asset-name">Claude Thailand Community</span><span class="asset-meta">Partner · PNG 1200px</span></span>
+        <span class="asset-dl">↓</span>
+      </a>
     </div>
   </div></section>
 </main>
@@ -215,7 +240,7 @@
     +'<div class="rg-foot">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
   var TPL={event:EVENT,speakers:SPEAKERS,register:REGISTER}, DIR={event:'posters/',speakers:'posters/speakers/',register:'posters/'};
   var variant='event';
-  var names={'1200x630':'Facebook / Eventpop Cover','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster'};
+  var names={'1200x630':'Facebook / Eventpop Cover','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster','1920x1080':'16:9 Wide'};
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
       scaler=document.getElementById('scaler'),cap=document.getElementById('cap'),dl=document.getElementById('dl');
   function render(w,h,mode,file){
