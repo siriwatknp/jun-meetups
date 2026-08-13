@@ -15,6 +15,24 @@ screen at a bucket size IS the file.
 Only **two layout modes** to author: **landscape** (short/wide, two columns — the tightest,
 design it first) and **portrait** (vertical stack; 4:5 and A-series share it, content reflows).
 
+## Capture scale
+
+Sizes above are the **layout** (CSS px). Files are captured at **2× device pixels** — so
+`fb-photo.png` ships 2400×3000. Layout is byte-identical to 1×; only the raster is denser.
+Every platform downscales, so one hi-res file serves both screen and print.
+
+Raise it with `SCALE=3 npm run posters -- <id>`, but only after the source assets can feed it —
+past 2× the images, not the renderer, become the limit:
+
+| Asset | Source | Largest use | Ceiling |
+|---|---|---|---|
+| speaker avatars | 400px | 150px | 2× (3× wants ≥600px) |
+| `qr-eventpop.png` | 780px | 372px | 2× (3× wants ≥1200px) |
+| `prompt-icon.png` | 256px | ~30px | 4× |
+
+`PX` in each Meetup's `index.html` states the scale on the download button — keep it in sync
+with `tools/generate-posters.sh`.
+
 ## The poster element
 
 - Lives in the Meetup page inside a "Take the poster" section: size tabs → live preview →

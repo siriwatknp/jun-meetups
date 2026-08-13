@@ -151,7 +151,7 @@
         </div>
       </div></div>
       <div class="caption" id="cap">Facebook Link · 1200 × 630 px</div>
-      <a class="btn btn-primary" id="dl" href="posters/fb-link.png" download>⬇ Download PNG · 1200×630</a>
+      <a class="btn btn-primary" id="dl" href="posters/fb-link.png" download>⬇ Download PNG · 2400×1260 (2×)</a>
       <div class="wys">What you see is exactly the file you get (WYSIWYG)</div>
     </div>
   </div></section>
@@ -240,6 +240,7 @@
     +'<div class="rg-foot">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
   var TPL={event:EVENT,speakers:SPEAKERS,register:REGISTER}, DIR={event:'posters/',speakers:'posters/speakers/',register:'posters/'};
   var variant='event';
+  var PX=2; // posters are captured at 2× device pixels; keep in sync with tools/generate-posters.sh
   var names={'1200x630':'Facebook / Eventpop Cover','1200x1500':'Facebook Photo','800x1132':'Eventpop Poster','1920x1080':'16:9 Wide'};
   var art=document.getElementById('poster-art'),pc=document.getElementById('pcontent'),
       scaler=document.getElementById('scaler'),cap=document.getElementById('cap'),dl=document.getElementById('dl');
@@ -251,7 +252,7 @@
     art.style.transform='scale('+sc+')';
     scaler.style.width=(w*sc)+'px';scaler.style.height=(h*sc)+'px';
     var key=w+'x'+h;cap.textContent=names[key]+' · '+w+' × '+h+' px';
-    dl.textContent='⬇ Download PNG · '+w+'×'+h;dl.setAttribute('href',DIR[variant]+file+'.png');
+    dl.textContent='⬇ Download PNG · '+(w*PX)+'×'+(h*PX)+' ('+PX+'×)';dl.setAttribute('href',DIR[variant]+file+'.png');
   }
   window.posterCapture=function(w,h,mode,v){
     variant=v||variant; art.dataset.mode=mode; art.dataset.variant=variant; art.dataset.size=w+'x'+h; pc.innerHTML=TPL[variant]();
