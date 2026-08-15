@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/favicon-180.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css?v=5"/>
+<link rel="stylesheet" href="styles.css?v=4"/>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -51,7 +51,7 @@
         </div>
         <a id="reg-btn" class="btn btn-primary" href="https://www.eventpop.me/e/164118" target="_blank" rel="noopener">Register on Eventpop</a>
       </div>
-      <p class="orga-line"><img src="assets/prompt-icon.png" alt=""/><span>organized by <strong>Prompt ไปวันๆ</strong></span></p>
+      <p class="orga-line">organized by <img class="orga-logo" src="assets/prompt-icon.png" alt=""/><strong>Prompt ไปวันๆ</strong> <span class="orga-mid">·</span> <a class="orga-link" href="https://creatorsgarten.org/" target="_blank" rel="noopener"><img class="orga-logo" src="assets/cg-icon.svg" alt=""/><strong>Creatorsgarten</strong></a></p>
     </div>
     <div class="horizon" aria-hidden="true"></div>
   </section>
@@ -244,7 +244,7 @@
   <div class="foot-glow" aria-hidden="true"></div>
   <div class="foot-in">
     <p class="eyebrow">RUN BY</p>
-    <p class="foot-orga"><img src="assets/prompt-icon.png" alt=""/><span>organized by <strong>Prompt ไปวันๆ</strong></span></p>
+    <p class="foot-orga">organized by <img class="orga-logo" src="assets/prompt-icon.png" alt=""/><strong>Prompt ไปวันๆ</strong> <span class="orga-mid">·</span> <a class="orga-link" href="https://creatorsgarten.org/" target="_blank" rel="noopener"><img class="orga-logo" src="assets/cg-icon.svg" alt=""/><strong>Creatorsgarten</strong></a></p>
     <a class="btn btn-ghost" href="../../">← Back to all meetups</a>
     <p class="foot-fine">Claude Code Sharing #3 · a free, community-run meetup · Bangkok</p>
   </div>
@@ -263,7 +263,7 @@
         +'<span class="pk-chip">Agoda Thailand · One Bangkok</span>'
       +'</div>'
     +'</div>'
-    +'<div class="pk-below">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
+    +'<div class="pk-below">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b> <span class="pk-mid">·</span> <img class="pk-logo" src="assets/cg-icon.svg" alt=""/><b>Creatorsgarten</b></div>';};
   function row(av,talk,who,tba){return '<div class="spp-row'+(tba?' spp-tba':'')+'">'
     +(tba?'<span class="spp-av spp-avq">?</span>':'<img class="spp-av" src="assets/speakers/'+av+'" alt=""/>')
     +'<div class="spp-txt"><div class="spp-talk">'+talk+'</div><div class="spp-who">'+who+'</div></div></div>';}
@@ -285,7 +285,7 @@
         +row('peerapat.png','Managing Multiple Coding Agents with Orca ADE','พีรพัฒน์ จั่นขาว (พี) · Envisso',false)
       +'</div>'
     +'</div>'
-    +'<div class="spp-org">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
+    +'<div class="spp-org">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b> <span class="pk-mid">·</span> <img class="pk-logo" src="assets/cg-icon.svg" alt=""/><b>Creatorsgarten</b></div>';};
   var REGISTER=function(){return ''
     +'<div class="pk-free"><b>FREE</b> · Offline event</div>'
     +'<div class="rg-brand"><span class="bl">CLAUDE CODE</span> <span class="bl">SHARING <span class="hash">#3</span></span></div>'
@@ -296,7 +296,7 @@
       +'<div class="rg-qr"><img src="assets/qr-eventpop.png" alt="Scan to register"/></div>'
       +'<div class="rg-url">eventpop.me/e/164118</div>'
     +'</div>'
-    +'<div class="rg-foot">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b></div>';};
+    +'<div class="rg-foot">organized by <img class="pk-logo" src="assets/prompt-icon.png" alt=""/><b>Prompt ไปวันๆ</b> <span class="pk-mid">·</span> <img class="pk-logo" src="assets/cg-icon.svg" alt=""/><b>Creatorsgarten</b></div>';};
   var TPL={event:EVENT,speakers:SPEAKERS,register:REGISTER}, DIR={event:'posters/',speakers:'posters/speakers/',register:'posters/'};
   var variant='event';
   var PX=2; // posters are captured at 2× device pixels; keep in sync with tools/generate-posters.sh
