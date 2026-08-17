@@ -10,7 +10,7 @@ put both lines into the poll tool so the screen shows both.
 Each question is tagged with a generic type — **multiple choice**, **multi-select**,
 **open text** — so it maps onto Slido, Mentimeter, or anything else.
 
-> **Status:** confirmed set, in confirmed order — nine questions.
+> **Status:** confirmed set, in confirmed order — ten questions.
 
 ---
 
@@ -19,7 +19,7 @@ Each question is tagged with a generic type — **multiple choice**, **multi-sel
 | Time | On screen | Questions |
 |---|---|---|
 | 17:30 | Doors open, room filling | **C1** opens and stays open all evening |
-| 17:35–17:50 | Easy, no thinking required | **P1** → **A1** |
+| 17:35–17:50 | Easy, no thinking required | **P1** → **A1** → **U1** |
 | 17:50–18:05 | Room filling up | **A2** → **A4** |
 | 18:05–18:25 | Room at its fullest — the fun block | **D1** → **D2** |
 | 18:25–18:30 | MC opens, reads C1 count, welcomes online | **C2** opens — stays open all night |
@@ -95,7 +95,34 @@ its own line rather than folding into "other": talk #1 is iOS and จุ้น w
 
 ---
 
-## 4 · A2 — where do you run it from
+## 4 · U1 — what do you use it for
+**Type:** multiple choice
+
+> **คุณใช้ Claude Code ส่วนใหญ่กับอะไร?**
+> What do you mostly use Claude Code for?
+
+| TH | EN |
+|---|---|
+| งานประจำ — โค้ดที่ขึ้น production | Day job — code that ships to production |
+| โปรเจกต์ส่วนตัว ที่ตั้งใจทำจริง | A side project I'm serious about |
+| งานอดิเรก / ลองเล่นสนุกๆ | Hobby — just messing around |
+| Prototype ที่ทำแล้วทิ้ง | Throwaway prototypes |
+| ถามตอบ / ให้มันอธิบายโค้ด | Asking questions, having it explain code |
+| อื่นๆ | Something else |
+
+*Why:* after A2, the most useful result for the speakers. It tells them whether they're talking
+to hobbyists or to people shipping production code — which decides how much time they spend on
+review, safety, and CI. It also crosses with D1: the room will happily leave a throwaway
+prototype running unattended and won't do the same for production.
+
+*On the options:* "งานอดิเรก" and "โปรเจกต์ส่วนตัว" overlap almost completely for most devs, so
+they're split on a real boundary — a side project you intend to keep alive vs. playing around.
+Without that distinction the two buckets just split the same vote and neither number means
+anything.
+
+---
+
+## 5 · A2 — where do you run it from
 **Type:** multi-select (choose all that apply)
 
 > **ตอนนี้คุณรัน Claude Code จากที่ไหนบ้าง? (เลือกได้หลายข้อ)**
@@ -115,7 +142,7 @@ and every speaker can point at it. The single most useful result of the evening.
 
 ---
 
-## 5 · A4 — strangest place
+## 6 · A4 — strangest place
 **Type:** multiple choice
 
 > **ที่แปลกที่สุดที่คุณเคยสั่ง agent ให้ทำงานคือที่ไหน?**
@@ -133,7 +160,7 @@ and every speaker can point at it. The single most useful result of the evening.
 
 ---
 
-## 6 · D1 — how long did you leave it alone
+## 7 · D1 — how long did you leave it alone
 **Type:** multiple choice
 
 > **เคยปล่อย Claude Code ทำงานแล้วเดินไปทำอย่างอื่น นานสุดแค่ไหน?**
@@ -154,7 +181,7 @@ and พี's session talk without either speaker having to build the premise.
 
 ---
 
-## 7 · D2 — what do you do while it works
+## 8 · D2 — what do you do while it works
 **Type:** multiple choice
 
 > **ระหว่าง Claude Code ทำงาน ส่วนใหญ่คุณทำอะไร?**
@@ -177,7 +204,7 @@ if you'd rather run this as multi-select.
 
 ---
 
-## 8 · B3 — how many sessions at once
+## 9 · B3 — how many sessions at once
 **Type:** multiple choice · **run right before พี's talk (20:00)**
 
 > **ปกติคุณเปิด Claude Code พร้อมกันกี่ session?**
@@ -197,7 +224,7 @@ different places." The last option is the reason the talk exists — read that n
 
 ---
 
-## 9 · C2 — ask anything
+## 10 · C2 — ask anything
 **Type:** open text / audience Q&A with upvoting · **open from 18:30, runs all evening**
 
 > **อยากรู้เรื่องอะไรเป็นพิเศษ? พิมพ์ไว้ได้เลย แล้วโหวตอันที่อยากให้ตอบ**
@@ -232,7 +259,7 @@ Slido runs live: votes land on the presenter screen in real time, and its audien
 upvoting, which is exactly what C2 needs.
 
 Check before the night: **the free tier is reported to cap an event at 3 polls (and around 100
-participants)** — Q&A is unlimited. This set has 8 polls plus C2, so a free account won't cover
+participants)** — Q&A is unlimited. This set has 9 polls plus C2, so a free account won't cover
 it; you'd need a paid plan, or split across several Slido events, each with its own join code
 (clunky mid-event). If you do stay free, the three polls to keep are **C1, A2, A4** — C2 rides
 along free as Q&A.
