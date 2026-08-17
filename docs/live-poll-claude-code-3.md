@@ -10,8 +10,7 @@ put both lines into the poll tool so the screen shows both.
 Each question is tagged with a generic type — **multiple choice**, **multi-select**,
 **open text** — so it maps onto Slido, Mentimeter, or anything else.
 
-> **Status:** the seven questions below are the confirmed set, in confirmed order.
-> Three more (humour/energy) are still being chosen — see "Pending" at the bottom.
+> **Status:** confirmed set, in confirmed order — nine questions.
 
 ---
 
@@ -21,7 +20,8 @@ Each question is tagged with a generic type — **multiple choice**, **multi-sel
 |---|---|---|
 | 17:30 | Doors open, room filling | **C1** opens and stays open all evening |
 | 17:35–17:50 | Easy, no thinking required | **P1** → **A1** |
-| 17:50–18:15 | Room filling up | **A2** → **A4** |
+| 17:50–18:05 | Room filling up | **A2** → **A4** |
+| 18:05–18:25 | Room at its fullest — the fun block | **D1** → **D2** |
 | 18:25–18:30 | MC opens, reads C1 count, welcomes online | **C2** opens — stays open all night |
 | Before พี's talk (20:00) | MC reads result, hands to speaker | **B3** |
 
@@ -133,7 +133,51 @@ and every speaker can point at it. The single most useful result of the evening.
 
 ---
 
-## 6 · B3 — how many sessions at once
+## 6 · D1 — how long did you leave it alone
+**Type:** multiple choice
+
+> **เคยปล่อย Claude Code ทำงานแล้วเดินไปทำอย่างอื่น นานสุดแค่ไหน?**
+> What's the longest you've left Claude Code running while you walked away?
+
+| TH | EN |
+|---|---|
+| ไม่เคย นั่งดูทุกวินาที | Never — I watch every second |
+| แค่ไปเข้าห้องน้ำ | Just a bathroom break |
+| ไปกินข้าว | Went and had a meal |
+| ไปนอน แล้วค่อยมาดูตอนเช้า | Went to sleep, checked in the morning |
+| ออกจากบ้านไปเลย | Left the house entirely |
+
+*Why:* the only funny question that's also the literal thesis of the meetup. "Claude Code on
+Devices" is really a question about trust over distance, and this measures it in
+minutes-to-hours on a ladder everyone can place themselves on. Sets up both หนุ่ม's cloud talk
+and พี's session talk without either speaker having to build the premise.
+
+---
+
+## 7 · D2 — what do you do while it works
+**Type:** multiple choice
+
+> **ระหว่าง Claude Code ทำงาน ส่วนใหญ่คุณทำอะไร?**
+> While Claude Code is working, what do you mostly do?
+
+| TH | EN |
+|---|---|
+| นั่งจ้องมันพิมพ์ทีละบรรทัด | Sit and watch it type, line by line |
+| เปิดอีก session ให้มันทำอย่างอื่น | Open another session and give it more work |
+| ไถ social / ดู YouTube | Scroll social or watch YouTube |
+| สลับไปทำงานอื่น / เข้าประชุม | Switch to other work or a meeting |
+| ลุกไปชงกาแฟ หรือ งีบ | Get up for coffee, or a nap |
+
+*Why:* D1 asks how far you walk away, D2 asks what you do in that gap — they read as a pair and
+the second one is where the laugh is. The "เปิดอีก session" option is the setup for B3: whatever
+percentage picks it, the MC has the transition line into พี's talk already written.
+
+*Note:* "ส่วนใหญ่" was added to the question so a single-choice answer is unambiguous — drop it
+if you'd rather run this as multi-select.
+
+---
+
+## 8 · B3 — how many sessions at once
 **Type:** multiple choice · **run right before พี's talk (20:00)**
 
 > **ปกติคุณเปิด Claude Code พร้อมกันกี่ session?**
@@ -153,7 +197,7 @@ different places." The last option is the reason the talk exists — read that n
 
 ---
 
-## 7 · C2 — ask anything
+## 9 · C2 — ask anything
 **Type:** open text / audience Q&A with upvoting · **open from 18:30, runs all evening**
 
 > **อยากรู้เรื่องอะไรเป็นพิเศษ? พิมพ์ไว้ได้เลย แล้วโหวตอันที่อยากให้ตอบ**
@@ -165,13 +209,6 @@ least one online-submitted question aloud per talk, explicitly flagged as from o
 
 Phrased broader than "question for the speaker" so it also collects topics for #4 — no separate
 closing question needed.
-
----
-
-## Pending
-
-Three more questions (humour / energy) are being chosen to sit between A4 and B3. They'll be
-added here once picked.
 
 ---
 
@@ -195,7 +232,7 @@ Slido runs live: votes land on the presenter screen in real time, and its audien
 upvoting, which is exactly what C2 needs.
 
 Check before the night: **the free tier is reported to cap an event at 3 polls (and around 100
-participants)** — Q&A is unlimited. This set has 6 polls plus C2, so a free account won't cover
+participants)** — Q&A is unlimited. This set has 8 polls plus C2, so a free account won't cover
 it; you'd need a paid plan, or split across several Slido events, each with its own join code
 (clunky mid-event). If you do stay free, the three polls to keep are **C1, A2, A4** — C2 rides
 along free as Q&A.
