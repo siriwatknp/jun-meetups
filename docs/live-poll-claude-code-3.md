@@ -3,190 +3,39 @@
 Question bank for the live poll at **Claude Code Sharing #3 · "Claude Code on Devices"**
 (19 Aug 2026 · Agoda Thailand, One Bangkok).
 
-Written to run during the **17:30–18:30 registration window** on the projector, and to give
-**online viewers** something to join from the first minute. Bilingual: Thai first, English
-under it — put both lines in the poll tool so the screen shows both.
+Runs during the **17:30–18:30 registration window** on the projector, and gives **online
+viewers** something to join from the first minute. Bilingual: Thai first, English under it —
+put both lines into the poll tool so the screen shows both.
 
-- **11 questions**: 6 warm-up · 3 talk teasers (one per session) · 2 for the room + online.
-- Each is tagged with a generic type — **multiple choice**, **multi-select**, **word cloud**,
-  **scale**, **open text** — so it maps onto Slido, Mentimeter, or anything else.
-- Spares at the bottom for the closing slot.
+Each question is tagged with a generic type — **multiple choice**, **multi-select**,
+**open text** — so it maps onto Slido, Mentimeter, or anything else.
+
+> **Status:** the seven questions below are the confirmed set, in confirmed order.
+> Three more (humour/energy) are still being chosen — see "Pending" at the bottom.
 
 ---
 
 ## Run of show
 
-| Time | What's on screen | Questions |
+| Time | On screen | Questions |
 |---|---|---|
-| 17:30–17:50 | Doors open, room filling | A1 → A2 (easy, no thinking required) |
-| 17:50–18:10 | Room half full, people settling | A3 → A4 (the fun ones — screenshots get shared) |
-| 18:10–18:25 | Almost seated | A5 → A6 (sets up the whole night's theme) |
-| 18:25–18:30 | MC opens, welcomes online viewers | C1 (who's here) — then leave **C2 (Q&A)** open all night |
-| Before each talk | MC reads the result aloud, hands to speaker | B1 / B2 / B3 |
-| 20:30 | Networking starts | Spares S1 / S2 |
+| 17:30 | Doors open, room filling | **C1** opens and stays open all evening |
+| 17:35–17:50 | Easy, no thinking required | **P1** → **A1** |
+| 17:50–18:15 | Room filling up | **A2** → **A4** |
+| 18:25–18:30 | MC opens, reads C1 count, welcomes online | **C2** opens — stays open all night |
+| Before พี's talk (20:00) | MC reads result, hands to speaker | **B3** |
 
-Leave the join QR + room code on a corner of the slide the entire evening — people arrive late,
-and online viewers scrub back.
+Leave the join QR + room code in a corner of the slide the entire evening — people arrive
+late and online viewers scrub back.
 
----
-
-## A · Warm-up (registration window)
-
-### A1 — How long have you used Claude Code?
-**Type:** multiple choice (single)
-
-> **ใช้ Claude Code มานานแค่ไหนแล้ว?**
-> How long have you been using Claude Code?
-
-| TH | EN |
-|---|---|
-| ยังไม่เคยใช้ — มาดูก่อน | Haven't tried it yet — here to look |
-| น้อยกว่า 1 เดือน | Less than a month |
-| 1–6 เดือน | 1–6 months |
-| มากกว่า 6 เดือน | More than 6 months |
-| ใช้ทุกวันจนลืมพิมพ์โค้ดเอง | Every day — I've forgotten how to type code |
-
-*Why:* zero-effort first vote, and it tells all three speakers how deep to go.
+**C1 timing note:** as the opening question its count is wrong until the room fills — at 17:35
+half the attendees are still in the lift. Let it accumulate and have the MC read it at 18:30,
+not early.
 
 ---
 
-### A2 — Where do you run it from?
-**Type:** multi-select (choose all that apply)
-
-> **ตอนนี้คุณรัน Claude Code จากที่ไหนบ้าง? (เลือกได้หลายข้อ)**
-> Where do you run Claude Code from today? (select all)
-
-| TH | EN |
-|---|---|
-| Terminal บน laptop | Terminal on my laptop |
-| IDE extension (VS Code / JetBrains) | IDE extension (VS Code / JetBrains) |
-| มือถือ หรือ แท็บเล็ต | Phone or tablet |
-| เครื่อง remote / cloud | A remote box or the cloud |
-| CI หรือ GitHub Actions | CI or GitHub Actions |
-| ยังไม่เคยรันเลย | Never run it |
-
-*Why:* this is the thesis of the night in one chart — the laptop bar will tower over the rest,
-and every speaker can point at it.
-
----
-
-### A3 — One word
-**Type:** word cloud
-
-> **พิมพ์คำเดียว: Claude Code เปลี่ยนอะไรในงานคุณมากที่สุด**
-> In one word: what has Claude Code changed most about your work?
-
-*Why:* word clouds fill the screen fast and look alive while the room is still walking in.
-Ask for **one word** explicitly or the cloud turns to mush.
-
----
-
-### A4 — Strangest place
-**Type:** multiple choice (single)
-
-> **ที่แปลกที่สุดที่คุณเคยสั่ง agent ให้ทำงานคือที่ไหน?**
-> What's the strangest place you've ever kicked off an agent from?
-
-| TH | EN |
-|---|---|
-| บนเตียง ก่อนนอน | In bed, right before sleep |
-| บน BTS / ตอนรถติด | On the BTS or stuck in traffic |
-| ระหว่างประชุม (ปิดกล้องไว้) | During a meeting, camera off |
-| บนเครื่องบิน / ตอนเที่ยว | On a plane or on holiday |
-| ยังไม่เคยออกจากโต๊ะทำงาน | Never — always at my desk |
-
-*Why:* the laugh of the night, and it lands the audience exactly where talk #1 and #2 start.
-
----
-
-### A5 — How much is the agent writing?
-**Type:** scale / multiple choice (single)
-
-> **โค้ดที่คุณ merge ทุกวันนี้ มาจาก agent ประมาณกี่ %?**
-> Roughly what % of the code you merge is written by an agent?
-
-| TH | EN |
-|---|---|
-| 0% | 0% |
-| 1–25% | 1–25% |
-| 26–50% | 26–50% |
-| 51–75% | 51–75% |
-| 76–100% | 76–100% |
-
-*Why:* the number people are most curious about each other's answer to. Great MC moment.
-
----
-
-### A6 — What keeps you at the desk?
-**Type:** multiple choice (single)
-
-> **อะไรที่ทำให้คุณยัง "ต้องกลับมานั่งที่โต๊ะ"?**
-> What still forces you back to your desk?
-
-| TH | EN |
-|---|---|
-| ต้องอ่าน diff บนจอใหญ่ | I need to read the diff on a big screen |
-| ต้อง approve ทุก tool call | Approving every tool call |
-| secrets / VPN / เข้าเครื่องบริษัทไม่ได้ | Secrets, VPN, can't reach the company box |
-| กลัว agent ไปแตะ prod | Scared the agent touches prod |
-| setup บนอุปกรณ์อื่นยุ่งยากเกิน | Setting it up elsewhere is too much work |
-
-*Why:* this is the problem statement for all three talks. Hand the result straight to the MC
-as the transition line into the first session.
-
----
-
-## B · Talk teasers (run right before each session)
-
-### B1 — before "Leveraging iOS ecosystem for agentic coding" (จุ้น · MUI)
-**Type:** multiple choice (single)
-
-> **งานแบบไหนที่คุณ "ยอม" ทำจากมือถือ?**
-> What kind of work would you actually do from your phone?
-
-| TH | EN |
-|---|---|
-| รีวิว PR / อ่าน diff | Review a PR, read a diff |
-| ตามแก้ CI ที่พัง | Chase down a broken CI run |
-| สั่งงานใหม่แล้วปล่อยให้รัน | Kick off a new task and let it run |
-| คุยกับ agent เก็บไอเดีย | Talk to the agent to shape an idea |
-| ไม่ยอมทำอะไรเลย จอเล็กไป | Nothing — the screen is too small |
-
----
-
-### B2 — before "Work anywhere with Claude Code in the cloud" (หนุ่ม · Eventpop, TokenMe)
-**Type:** word cloud (or open text)
-
-> **ถ้า Claude Code รันบน cloud ได้ 24 ชม. คุณจะให้มันทำอะไรตอนคุณหลับ?**
-> If Claude Code ran in the cloud 24/7, what would you have it do while you sleep?
-
-*Why:* open-ended on purpose — the answers become the speaker's demo checklist, and the
-audience recognises their own words on screen.
-
----
-
-### B3 — before "Managing Multiple Coding Agents with Orca ADE" (พี · Envisso)
-**Type:** multiple choice (single)
-
-> **ปกติคุณรัน agent พร้อมกันกี่ตัว?**
-> How many agents do you normally run at once?
-
-| TH | EN |
-|---|---|
-| 1 ตัว — พอแล้ว | Just 1 — that's plenty |
-| 2–3 ตัว | 2–3 |
-| 4–6 ตัว | 4–6 |
-| มากกว่า 6 ตัว | More than 6 |
-| เคยลองหลายตัว แล้วมั่วจนเลิก | Tried many, got lost, gave up |
-
-*Why:* the "gave up" bucket is the whole reason the talk exists. Read that number out loud.
-
----
-
-## C · The room + online viewers
-
-### C1 — Where are you watching from?
-**Type:** multiple choice (single)
+## 1 · C1 — where are you right now
+**Type:** multiple choice · **opens the poll, runs all evening**
 
 > **คุณอยู่ที่ไหนตอนนี้?**
 > Where are you right now?
@@ -201,52 +50,157 @@ audience recognises their own words on screen.
 *Why:* one question that makes online viewers visible to the room. The MC greeting them by
 count is the cheapest way to keep them engaged all night.
 
+*Check:* the replay option only earns its slot if there's actually a recording.
+
 ---
 
-### C2 — Ask the speakers
-**Type:** open text / audience Q&A with upvoting — **leave open the whole evening**
+## 2 · P1 — your role
+**Type:** multiple choice
 
-> **มีคำถามอะไรอยากถามสปีกเกอร์? พิมพ์ไว้ได้เลย แล้วโหวตคำถามที่อยากให้ตอบ**
-> Got a question for the speakers? Drop it in and upvote the ones you want answered.
+> **งานหลักของคุณคือสายไหน?**
+> What's your main line of work?
+
+| TH | EN |
+|---|---|
+| Frontend / Web | Frontend / Web |
+| Backend / API / Infra | Backend / API / Infra |
+| Full-stack | Full-stack |
+| Mobile (iOS / Android) | Mobile (iOS / Android) |
+| Data / ML / AI | Data / ML / AI |
+| ไม่ใช่สาย dev (PM, Design, QA, อื่นๆ) | Not a dev (PM, design, QA, other) |
+
+*Why:* goes early because it's the one question a person who has never touched Claude Code can
+answer confidently — it makes everyone countable before the Claude questions start. Mobile gets
+its own line rather than folding into "other": talk #1 is iOS and จุ้น will want that number.
+
+*Cross it with A2 on stage:* "the mobile devs are already the ones running it off-laptop."
+
+---
+
+## 3 · A1 — how long have you used Claude Code
+**Type:** multiple choice
+
+> **ใช้ Claude Code มานานแค่ไหนแล้ว?**
+> How long have you been using Claude Code?
+
+| TH | EN |
+|---|---|
+| ยังไม่เคยใช้ — มาดูก่อน | Haven't tried it yet — here to look |
+| น้อยกว่า 1 เดือน | Less than a month |
+| 1–6 เดือน | 1–6 months |
+| มากกว่า 6 เดือน | More than 6 months |
+| ใช้ทุกวันจนลืมพิมพ์โค้ดเอง | Every day — I've forgotten how to type code |
+
+*Why:* zero-effort vote, and it tells all three speakers how deep they can go.
+
+---
+
+## 4 · A2 — where do you run it from
+**Type:** multi-select (choose all that apply)
+
+> **ตอนนี้คุณรัน Claude Code จากที่ไหนบ้าง? (เลือกได้หลายข้อ)**
+> Where do you run Claude Code from today? (select all)
+
+| TH | EN |
+|---|---|
+| Terminal บน laptop | Terminal on my laptop |
+| IDE extension (VS Code / JetBrains) | IDE extension (VS Code / JetBrains) |
+| มือถือ หรือ แท็บเล็ต | Phone or tablet |
+| เครื่อง remote / cloud | A remote box or the cloud |
+| CI หรือ GitHub Actions | CI or GitHub Actions |
+| ยังไม่เคยรันเลย | Never run it |
+
+*Why:* the thesis of the night in one chart — the laptop bar will tower over everything else,
+and every speaker can point at it. The single most useful result of the evening.
+
+---
+
+## 5 · A4 — strangest place
+**Type:** multiple choice
+
+> **ที่แปลกที่สุดที่คุณเคยสั่ง agent ให้ทำงานคือที่ไหน?**
+> What's the strangest place you've ever kicked off an agent from?
+
+| TH | EN |
+|---|---|
+| บนเตียง ก่อนนอน | In bed, right before sleep |
+| บน BTS / ตอนรถติด | On the BTS or stuck in traffic |
+| ระหว่างประชุม (ปิดกล้องไว้) | During a meeting, camera off |
+| บนเครื่องบิน / ตอนเที่ยว | On a plane or on holiday |
+| ยังไม่เคยออกจากโต๊ะทำงาน | Never — always at my desk |
+
+*Why:* the laugh of the night, and it lands the audience exactly where talks #1 and #2 start.
+
+---
+
+## 6 · B3 — how many sessions at once
+**Type:** multiple choice · **run right before พี's talk (20:00)**
+
+> **ปกติคุณเปิด Claude Code พร้อมกันกี่ session?**
+> How many Claude Code sessions do you normally run at once?
+
+| TH | EN |
+|---|---|
+| 1 session — ทีละอย่างพอ | Just 1 — one thing at a time |
+| 2–3 sessions | 2–3 |
+| 4–6 sessions | 4–6 |
+| มากกว่า 6 sessions | More than 6 |
+| เคยเปิดหลาย session แล้วมั่วจนเลิก | Tried it, lost track, went back to one |
+
+*Why:* "sessions" is the unit people actually count, and it's the exact thing Orca ADE manages.
+Pairs with A2 — A2 answers *where*, B3 answers *how many*: "this room runs N sessions from M
+different places." The last option is the reason the talk exists — read that number out loud.
+
+---
+
+## 7 · C2 — ask anything
+**Type:** open text / audience Q&A with upvoting · **open from 18:30, runs all evening**
+
+> **อยากรู้เรื่องอะไรเป็นพิเศษ? พิมพ์ไว้ได้เลย แล้วโหวตอันที่อยากให้ตอบ**
+> Anything you specifically want to know? Drop it in — upvote what you want answered.
 
 *Why:* the highest-value item here. Onsite people are shy about raising a hand and online
-viewers can't. Sort by upvotes and let the MC read the top 3 after each talk.
+viewers can't. Sort by upvotes and let the MC read the top 3 after each talk — and read at
+least one online-submitted question aloud per talk, explicitly flagged as from online.
+
+Phrased broader than "question for the speaker" so it also collects topics for #4 — no separate
+closing question needed.
 
 ---
 
-## Spares (closing / networking)
+## Pending
 
-**S1 — next edition topic** · word cloud
-> **อยากให้ #4 พูดเรื่องอะไร?** / What should #3's sequel be about?
-
-**S2 — takeaway** · multiple choice
-> **คืนนี้คุณจะกลับไปลองอะไรก่อน?** / What will you try first when you get home?
-> — รัน Claude Code จากมือถือ / ย้ายไปรันบน cloud / ลองหลาย agent พร้อมกัน / ต่อเข้า CI / ยังไม่แน่ใจ
-> — Run it from my phone / Move it to the cloud / Run several agents / Wire it into CI / Not sure yet
+Three more questions (humour / energy) are being chosen to sit between A4 and B3. They'll be
+added here once picked.
 
 ---
 
 ## Notes for whoever runs it
 
-- **Keep the question line short.** Anything past roughly 60 Thai characters wraps badly on a
-  projector at the back of the room. Options: 5 max, one line each.
+- **Keep the question line short.** Past roughly 60 Thai characters it wraps badly on a
+  projector at the back of the room. Options: 6 max, one line each.
 - **Thai first, English second**, same order everywhere — people scan for their language by
   position, not by reading both.
-- **Show results live** for A-block questions (it's the point) and for B-block only after the
-  MC has read the question aloud, so the first votes don't anchor the rest.
-- **Reset between the room and online.** If you want a clean per-question count, don't reuse a
-  poll — duplicate it.
+- **Show results live.** That's the point for the whole A block. For B3, reveal only after the
+  MC has read the question aloud so the first votes don't anchor the rest.
+- **Keep it anonymous.** No name or email fields — Eventpop already has those.
+- **Don't ask what Eventpop already collects.** Check the registration form first; if it
+  already captures role, pull P1 from the export instead of spending screen time on it.
+- **Profile results are the sponsor deck.** P1 is the "who came" slide for Agoda and for
+  whoever takes the open sponsor slot on the poster.
 
 ### If you use Slido
 
 Slido runs live: votes land on the presenter screen in real time, and its audience Q&A supports
 upvoting, which is exactly what C2 needs.
 
-One thing to check before the night: **the free tier is reported to cap an event at 3 polls
-(and around 100 participants)** — Q&A is unlimited. This bank has 11 questions, so on a free
-account you'd need a paid plan, or split the questions across several Slido events (each with
-its own join code — clunky mid-event). I couldn't reach slido.com from here to confirm against
-the official pricing page; the figures come from third-party write-ups, so verify on
-[slido.com/pricing](https://www.slido.com/pricing) before committing to a plan.
+Check before the night: **the free tier is reported to cap an event at 3 polls (and around 100
+participants)** — Q&A is unlimited. This set has 6 polls plus C2, so a free account won't cover
+it; you'd need a paid plan, or split across several Slido events, each with its own join code
+(clunky mid-event). If you do stay free, the three polls to keep are **C1, A2, A4** — C2 rides
+along free as Q&A.
 
-Mentimeter has similar per-presentation limits on its free tier. Worth checking the same way.
+I couldn't reach slido.com from this environment to confirm against the official pricing page;
+those figures come from third-party write-ups, so verify on
+[slido.com/pricing](https://www.slido.com/pricing) before committing to a plan. Mentimeter has
+similar per-presentation limits on its free tier — worth checking the same way.
