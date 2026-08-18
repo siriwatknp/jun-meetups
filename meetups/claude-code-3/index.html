@@ -38,7 +38,7 @@
     <div class="hero-below">
       <div class="cta-row">
         <div id="reg-countdown" class="countdown" hidden>
-          <p class="cd-over">Register in</p>
+          <p class="cd-over">Event starts in</p>
           <div class="cd-clock">
             <span class="cd-unit"><span class="cd-num" data-d>00</span><span class="cd-lbl">days</span></span>
             <span class="cd-sep">:</span>
@@ -49,7 +49,6 @@
             <span class="cd-unit"><span class="cd-num" data-s>00</span><span class="cd-lbl">sec</span></span>
           </div>
         </div>
-        <a id="reg-btn" class="btn btn-primary" href="https://www.eventpop.me/e/164118" target="_blank" rel="noopener">Register on Eventpop</a>
       </div>
       <p class="orga-line">organized by <a class="orga-link" href="https://www.facebook.com/devMasterSomeday" target="_blank" rel="noopener"><img class="orga-logo" src="assets/prompt-icon.png" alt=""/><strong>Prompt ไปวันๆ</strong></a> <span class="orga-mid">·</span> <a class="orga-link" href="https://creatorsgarten.org/" target="_blank" rel="noopener"><img class="orga-logo" src="assets/cg-icon.svg" alt=""/><strong>Creatorsgarten</strong></a></p>
     </div>
@@ -407,19 +406,18 @@
 })();
 </script>
 <script>
-/* Registration countdown → swaps to the Register button when it opens.
-   TODO: set the real registration-open datetime (Asia/Bangkok, +07:00). */
+/* Countdown to event start (Asia/Bangkok). Shows "Happening now" once it begins. */
 (function(){
-  var OPEN = new Date('2026-08-09T11:00:00+07:00'); // registration opens · Asia/Bangkok
+  var START = new Date('2026-08-19T18:00:00+07:00');
   var cd = document.getElementById('reg-countdown');
-  var btn = document.getElementById('reg-btn');
-  if(!cd || !btn) return;
+  if(!cd) return;
+  var over = cd.querySelector('.cd-over'), clock = cd.querySelector('.cd-clock');
   var el = {d:cd.querySelector('[data-d]'),h:cd.querySelector('[data-h]'),m:cd.querySelector('[data-m]'),s:cd.querySelector('[data-s]')};
   function pad(n){return (n<10?'0':'')+n;}
   function tick(){
-    var diff = OPEN - new Date();
-    if(diff <= 0){ cd.hidden = true; btn.hidden = false; return true; }
-    btn.hidden = true; cd.hidden = false;
+    var diff = START - new Date();
+    cd.hidden = false;
+    if(diff <= 0){ clock.hidden = true; over.textContent = 'Happening now'; return true; }
     var t = Math.floor(diff/1000);
     var d = Math.floor(t/86400); t -= d*86400;
     var h = Math.floor(t/3600);  t -= h*3600;
