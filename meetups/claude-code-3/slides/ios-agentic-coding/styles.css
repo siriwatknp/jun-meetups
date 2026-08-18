@@ -1,0 +1,469 @@
+/* Slides — "Leveraging iOS ecosystem for agentic coding" (Claude Code Sharing #3).
+   Self-contained: tokens hand-copied from the meetup theme, per theme-authoring.md.
+   Fixed 1280x720 design stage; everything sized in --u (1 design px) so the
+   projection is exactly what was authored. */
+:root{
+  --void:#0a0605;--card:#150c09;--line:#2c1a12;
+  --glow:#ff6a1f;--glow-soft:#ff8a3d;--coral:#e88a63;--coral-deep:#b5542f;--coral-shadow:#7a2e14;
+  --flame:#ff9d6b;--bone:#f5ede6;--ash:#b3a196;--ash-dim:#7a695f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#000}
+body{color:var(--bone);font-family:"IBM Plex Sans Thai",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+
+.deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+
+/* the stage: locked 16:9, largest that fits, and the container all units key off */
+.stage{
+  position:relative;overflow:hidden;
+  width:min(100vw,calc(100svh * 16 / 9));
+  aspect-ratio:16/9;
+  background:var(--void);
+  container-type:size;
+  --u:0.078125cqw; /* 100cqw / 1280 = one design pixel */
+}
+
+/* slide track — scroll-snap so swipe works free on touch */
+.track{
+  position:absolute;inset:0;z-index:2;
+  display:flex;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;
+  overscroll-behavior-x:contain;
+  scrollbar-width:none;
+}
+.track::-webkit-scrollbar{display:none}
+.track:focus{outline:none}
+.track:focus-visible{outline:calc(3*var(--u)) solid var(--flame);outline-offset:calc(-6*var(--u))}
+
+.slide{
+  flex:0 0 100%;width:100%;height:100%;
+  scroll-snap-align:center;scroll-snap-stop:always;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:calc(64*var(--u)) calc(84*var(--u));
+  text-align:center;
+  /* a device that bleeds off one slide must not spill into the next */
+  overflow:hidden;
+}
+
+/* ── title slide ───────────────────────────────────────────── */
+.eyebrow{
+  font-family:"Silkscreen",monospace;font-weight:400;
+  font-size:calc(17*var(--u));letter-spacing:.28em;text-transform:uppercase;
+  color:var(--coral);opacity:.9;margin-bottom:calc(34*var(--u));
+}
+.eyebrow .hash{font-style:normal;color:var(--flame)}
+
+.s-title{
+  font-family:"Silkscreen",monospace;font-weight:700;
+  font-size:calc(50*var(--u));line-height:1.22;letter-spacing:-.01em;
+  color:var(--coral);
+  text-shadow:
+    calc(2*var(--u)) calc(2*var(--u)) 0 var(--coral-deep),
+    calc(4*var(--u)) calc(4*var(--u)) 0 var(--coral-shadow),
+    calc(6*var(--u)) calc(7*var(--u)) calc(16*var(--u)) rgba(0,0,0,.55);
+}
+.s-title em{font-style:normal;color:var(--flame)}
+
+.s-by{
+  font-weight:600;font-size:calc(30*var(--u));color:var(--bone);
+  margin-top:calc(52*var(--u));text-shadow:0 calc(1*var(--u)) calc(12*var(--u)) rgba(8,4,2,.7);
+}
+.s-role{
+  font-family:"IBM Plex Mono",monospace;font-weight:400;
+  font-size:calc(19*var(--u));color:var(--ash);margin-top:calc(9*var(--u));
+}
+.s-foot{
+  font-family:"IBM Plex Mono",monospace;font-size:calc(15*var(--u));
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ash-dim);
+  margin-top:calc(46*var(--u));
+}
+
+/* ── content + clip slides ─────────────────────────────────── */
+/* Silkscreen is the title slide's signature only — at heading sizes it costs too much
+   legibility, so every other title is set in the sans. */
+.s-h2{
+  font-weight:600;
+  font-size:calc(38*var(--u));line-height:1.22;letter-spacing:-.01em;color:var(--coral);
+  text-shadow:0 calc(2*var(--u)) calc(14*var(--u)) rgba(8,4,2,.6);
+}
+.s-body{font-size:calc(21*var(--u));line-height:1.55;color:var(--bone);margin-top:calc(20*var(--u))}
+.s-body strong{color:var(--flame);font-weight:600}
+
+/* clip slide: copy on one side, the recording on the other. A portrait phone capture is
+   very tall — the two-column split is what turns its empty flanks into the layout. */
+.slide-clip{flex-direction:row;align-items:center;gap:calc(60*var(--u));text-align:left}
+.slide-clip .copy{flex:1 1 0;min-width:0}
+.slide-clip.reverse{flex-direction:row-reverse}
+
+.clip{flex:0 0 auto;margin:0;display:flex;flex-direction:column;align-items:center}
+.clip video{display:block;background:#000;border:0}
+
+/* ── device bodies ─────────────────────────────────────────────
+   The recordings are raw screen captures with no physical context, so the frame
+   supplies it: an aluminium-ish body, a hairline edge, and a screen inset. */
+.device{
+  position:relative;flex:0 0 auto;
+  background:linear-gradient(152deg,#55555c 0%,#26262a 16%,#191a1d 52%,#3a3a42 100%);
+  box-shadow:
+    0 calc(24*var(--u)) calc(60*var(--u)) rgba(0,0,0,.65),
+    inset 0 0 0 calc(1.5*var(--u)) rgba(255,255,255,.13);
+}
+/* the screen well — a dark seam between bezel and picture */
+.device::before{
+  content:"";position:absolute;inset:calc(9*var(--u));border-radius:calc(19*var(--u));
+  box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(0,0,0,.85);pointer-events:none;z-index:1;
+}
+
+/* iPad — thin even bezel, camera centred on the long (top) edge */
+.device.pad{padding:calc(15*var(--u));border-radius:calc(28*var(--u))}
+.device.pad video{height:calc(438*var(--u));width:auto;border-radius:calc(15*var(--u))}
+.device.pad::after{
+  content:"";position:absolute;top:calc(6*var(--u));left:50%;transform:translateX(-50%);
+  width:calc(6*var(--u));height:calc(6*var(--u));border-radius:50%;background:#08080a;
+  box-shadow:inset 0 0 0 calc(1*var(--u)) rgba(255,255,255,.14);
+}
+/* Hardware keys. With the camera on the long edge, landscape puts the volume pair on the
+   top edge left of the camera, and the top/power button on the left edge. */
+.device.pad .keys{position:absolute;inset:0;pointer-events:none}
+.device.pad .keys::before{                 /* volume up + down (the second is a shadow copy) */
+  content:"";position:absolute;top:calc(-3*var(--u));left:22%;
+  width:calc(34*var(--u));height:calc(3.5*var(--u));border-radius:calc(2*var(--u));
+  background:linear-gradient(90deg,#52525a,#2b2b31);
+  box-shadow:calc(46*var(--u)) 0 0 #3d3d45;
+}
+.device.pad .keys::after{                  /* top/power button */
+  content:"";position:absolute;left:calc(-3*var(--u));top:16%;
+  width:calc(3.5*var(--u));height:calc(40*var(--u));border-radius:calc(2*var(--u));
+  background:linear-gradient(180deg,#52525a,#2b2b31);
+}
+
+/* iPhone — tighter bezel, far rounder corners. The recording already contains the
+   status bar and the island, so no synthetic notch. */
+.device.phone{padding:calc(11*var(--u));border-radius:calc(46*var(--u))}
+.device.phone video{height:calc(506*var(--u));width:auto;border-radius:calc(36*var(--u))}
+.device.phone::before{inset:calc(6*var(--u));border-radius:calc(41*var(--u))}
+/* side button + volume rockers */
+.device.phone::after{
+  content:"";position:absolute;right:calc(-2*var(--u));top:26%;
+  width:calc(2.5*var(--u));height:calc(58*var(--u));border-radius:calc(2*var(--u));
+  background:linear-gradient(180deg,#4c4c54,#2a2a30);
+}
+
+/* stills */
+.shot{margin:0;flex:0 0 auto}
+.shot img{
+  display:block;border-radius:calc(14*var(--u));
+  border:calc(1*var(--u)) solid var(--line);
+  box-shadow:0 calc(18*var(--u)) calc(50*var(--u)) rgba(0,0,0,.6);
+}
+.shot.tall img{height:calc(534*var(--u));width:auto}
+.shot.wide img{width:calc(840*var(--u));height:auto}
+.shot figcaption{
+  font-family:"IBM Plex Mono",monospace;font-size:calc(13*var(--u));
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim);
+  margin-top:calc(12*var(--u));text-align:center;
+}
+.clip figcaption{
+  font-family:"IBM Plex Mono",monospace;font-size:calc(13*var(--u));
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ash-dim);
+  margin-top:calc(12*var(--u));text-align:center;
+}
+
+/* one clip, centred, nothing else competing with it */
+.slide-clip.solo{flex-direction:column;gap:calc(26*var(--u));text-align:center}
+
+/* ── split clip slides ────────────────────────────────────────
+   Copy left, device right, and the copy's first line sits on the device's top edge.
+   The iPad is deliberately wider than the space left for it and is cropped by the
+   stage; the iPhone is shown whole. Both positioned absolutely so the device can
+   bleed without the slide's padding fighting it. */
+.slide-clip.split{position:relative;padding:0;display:block;text-align:left}
+.slide-clip.split .copy{position:absolute;left:calc(84*var(--u))}
+.slide-clip.split .clip{position:absolute;margin:0}
+/* A description that outruns its title reads as a paragraph, not a caption. */
+.slide-clip.split .s-body{
+  margin-top:calc(18*var(--u));font-size:calc(20*var(--u));
+  line-height:1.5;max-width:50ch;
+}
+.slide-clip.split .copy.lg .s-h2{font-size:calc(46*var(--u));line-height:1.18}
+
+/* Copy sits optically centred — true centre reads low against a tall device, so it
+   carries a slight upward bias. */
+.slide-clip.split .copy{top:50%;transform:translateY(-56%)}
+.slide-clip.split .clip{top:50%;transform:translateY(-50%)}
+
+/* iPad — runs off the right edge of the slide */
+.pad-split .copy{width:calc(388*var(--u))}
+.pad-split .clip{left:calc(512*var(--u))}
+.pad-split .device.pad video{height:calc(570*var(--u))}
+
+/* iPhone — 50/50, device centred and whole inside the right half */
+.phone-split .copy{width:calc(468*var(--u))}
+.phone-split .clip{left:calc(640*var(--u));width:calc(556*var(--u))}
+.phone-split .device.phone video{height:calc(640*var(--u))}
+
+/* ── drawn hardware ────────────────────────────────────────────
+   Mac, MacBook, iPad and the person are CSS/SVG rather than product shots: same
+   construction as the video frames, scales to any projector, nothing to license. */
+.rig{--body:linear-gradient(152deg,#55555c 0%,#26262a 16%,#191a1d 52%,#3a3a42 100%)}
+
+/* product shots stand in for the drawn shapes — sized by height so they share a bay */
+.rig-img{display:block;width:auto;object-fit:contain;
+  filter:drop-shadow(0 calc(16*var(--u)) calc(34*var(--u)) rgba(0,0,0,.7))}
+.rig-img.is-mini{height:calc(132*var(--u))}
+.rig-img.is-book{height:calc(206*var(--u))}
+.rig-img.is-pad{height:calc(238*var(--u))}
+
+/* the person at the near end of the wire */
+.who{display:flex;flex-direction:column;align-items:center;gap:calc(10*var(--u))}
+.who svg{width:calc(92*var(--u));height:calc(92*var(--u));fill:none;
+  stroke:var(--coral);stroke-width:calc(4*var(--u));stroke-linecap:round;stroke-linejoin:round}
+
+.rig-label{font-size:calc(25*var(--u));font-weight:600;
+  color:var(--ash);margin-top:calc(16*var(--u))}
+.rig-label.mono{font-family:"IBM Plex Mono",monospace;font-size:calc(13*var(--u));font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ash-dim)}
+.rig-name{font-size:calc(26*var(--u));font-weight:600;color:var(--coral);margin-top:calc(14*var(--u))}
+
+/* a labelled link between two rigs */
+.wire{display:flex;flex-direction:column;align-items:center;gap:calc(8*var(--u));flex:1 1 0;
+  min-width:calc(120*var(--u))}
+.wire .line{width:100%;height:calc(2*var(--u));background:
+  repeating-linear-gradient(90deg,var(--coral-deep) 0 calc(9*var(--u)),transparent calc(9*var(--u)) calc(17*var(--u)))}
+.wire .line.solid{background:linear-gradient(90deg,var(--coral-deep),var(--glow),var(--coral-deep))}
+.wire b{font-size:calc(19*var(--u));font-weight:600;color:var(--coral);letter-spacing:0}
+.wire b.mono{font-family:"IBM Plex Mono",monospace;font-size:calc(16*var(--u));letter-spacing:.12em;
+  text-transform:uppercase;font-weight:400}
+.wire i{font-style:normal;font-size:calc(17*var(--u));color:var(--ash)}
+
+.rig-row{display:flex;align-items:center;justify-content:center;gap:calc(26*var(--u));
+  width:calc(1000*var(--u));margin-top:calc(26*var(--u))}
+.rig-col{display:flex;flex-direction:column;align-items:center;flex:0 0 auto}
+.rig-badge{display:inline-flex;align-items:center;gap:calc(7*var(--u));margin-top:calc(12*var(--u));
+  border:calc(1*var(--u)) solid var(--line);border-radius:calc(999*var(--u));
+  padding:calc(6*var(--u)) calc(13*var(--u));background:rgba(21,12,9,.6)}
+.rig-badge img{width:calc(20*var(--u));height:calc(20*var(--u))}
+.rig-badge span{font-size:calc(16*var(--u));color:var(--bone)}
+
+/* ── the wire, as one run from hand to agent ─────────────────── */
+.run{display:flex;align-items:stretch;width:calc(1030*var(--u));margin-top:calc(34*var(--u))}
+.run-end{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  flex:0 0 calc(150*var(--u));gap:calc(10*var(--u))}
+.run-end img{width:calc(52*var(--u));height:calc(52*var(--u));object-fit:contain}
+.run-end b{font-size:calc(22*var(--u));font-weight:600;color:var(--coral)}
+.run-end i{font-style:normal;font-size:calc(16*var(--u));color:var(--ash);text-align:center}
+.run-mid{flex:1 1 0;display:flex;align-items:center;padding:0 calc(14*var(--u))}
+.run-seg{
+  flex:1 1 0;text-align:center;padding:calc(13*var(--u)) calc(6*var(--u));
+  border-top:calc(2*var(--u)) solid var(--coral-deep);
+  border-bottom:calc(2*var(--u)) solid var(--coral-deep);
+  background:linear-gradient(180deg,rgba(255,120,45,.10),transparent);
+}
+.run-seg + .run-seg{border-left:calc(2*var(--u)) solid var(--coral-deep)}
+.run-seg b{display:block;font-size:calc(23*var(--u));font-weight:600;color:var(--flame)}
+.run-seg span{display:block;font-size:calc(16*var(--u));color:var(--ash);margin-top:calc(5*var(--u));line-height:1.35}
+
+/* ── card rows ─────────────────────────────────────────────── */
+.s-row{display:flex;gap:calc(26*var(--u));justify-content:center;align-items:stretch;
+  width:calc(980*var(--u));margin-top:calc(30*var(--u))}
+.s-row.narrow{width:calc(700*var(--u))}
+.s-card{
+  flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:calc(10*var(--u));text-align:center;
+  background:rgba(21,12,9,.55);border:calc(1*var(--u)) solid var(--line);
+  border-radius:calc(16*var(--u));padding:calc(30*var(--u)) calc(20*var(--u));
+}
+.s-card .as-mark{font-weight:600;font-size:calc(30*var(--u));color:var(--flame);letter-spacing:-.01em}
+.s-card .c-sub{font-size:calc(16*var(--u));color:var(--ash);line-height:1.4}
+
+/* supporting line under a diagram or row */
+.s-sm{font-size:calc(18*var(--u));color:var(--ash);margin-top:calc(26*var(--u));
+  line-height:1.5;max-width:calc(880*var(--u))}
+
+/* ── flows ─────────────────────────────────────────────────── */
+.s-flow{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:calc(14*var(--u));font-size:calc(23*var(--u));color:var(--bone);margin-top:calc(24*var(--u));
+}
+.s-flow i{font-style:normal;color:var(--coral-deep)}
+.s-flow .hot{color:var(--flame);font-weight:600}
+/* the reframe: two named halves of one setup */
+.s-flow.big{gap:calc(40*var(--u))}
+.s-flow.big .f-node{
+  display:flex;flex-direction:column;align-items:center;gap:calc(6*var(--u));
+  border:calc(1*var(--u)) solid var(--line);border-radius:calc(16*var(--u));
+  padding:calc(28*var(--u)) calc(44*var(--u));background:rgba(21,12,9,.55);
+}
+.s-flow.big .f-node b{font-size:calc(34*var(--u));font-weight:600;color:var(--coral)}
+.s-flow.big .f-node i{
+  font-family:"IBM Plex Mono",monospace;font-size:calc(14*var(--u));
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ash-dim);font-style:normal;
+}
+.s-flow.big .f-link{font-size:calc(30*var(--u));color:var(--glow)}
+
+/* ── statement slides ──────────────────────────────────────── */
+.slide-statement .s-lead{
+  font-weight:600;
+  font-size:calc(54*var(--u));line-height:1.18;letter-spacing:-.015em;color:var(--coral);
+  text-shadow:0 calc(2*var(--u)) calc(18*var(--u)) rgba(8,4,2,.6);
+}
+.slide-statement .s-lead em{font-style:normal;color:var(--flame)}
+.slide-statement .s-sub{font-size:calc(22*var(--u));color:var(--ash);margin-top:calc(26*var(--u))}
+
+/* ── tool logos ────────────────────────────────────────────── */
+.tools{display:flex;gap:calc(28*var(--u));justify-content:center;align-items:stretch;margin-top:calc(34*var(--u))}
+.tool{
+  flex:1 1 0;display:flex;flex-direction:column;align-items:center;text-align:center;
+  background:rgba(21,12,9,.55);border:calc(1*var(--u)) solid var(--line);
+  border-radius:calc(16*var(--u));padding:calc(26*var(--u)) calc(16*var(--u));
+}
+/* Fixed mark slot keeps the four cards aligned whether or not a real logo exists.
+   No official mark → the name itself is the mark. */
+.tool .mark{height:calc(64*var(--u));display:flex;align-items:center;justify-content:center;margin-bottom:calc(16*var(--u))}
+.tool .mark img{width:calc(64*var(--u));height:calc(64*var(--u));object-fit:contain}
+.tool .mark .as-mark{font-weight:600;font-size:calc(30*var(--u));color:var(--flame);letter-spacing:-.01em}
+.tool .t-name{font-weight:600;font-size:calc(21*var(--u));color:var(--bone)}
+.tool .t-name.muted{color:var(--ash-dim);font-size:calc(15*var(--u));font-weight:400}
+.tool .t-what{font-size:calc(15*var(--u));line-height:1.45;color:var(--ash);margin-top:calc(8*var(--u))}
+.tool .t-link{font-family:"IBM Plex Mono",monospace;font-size:calc(13*var(--u));color:var(--coral);margin-top:calc(12*var(--u))}
+
+/* ── the stack ─────────────────────────────────────────────── */
+.stack{display:flex;flex-direction:column;gap:calc(10*var(--u));margin-top:calc(30*var(--u));width:calc(760*var(--u))}
+.stack-row{
+  display:flex;align-items:center;gap:calc(16*var(--u));
+  background:rgba(21,12,9,.6);border:calc(1*var(--u)) solid var(--line);
+  border-radius:calc(12*var(--u));padding:calc(14*var(--u)) calc(20*var(--u));
+}
+.stack-row .ico{width:calc(30*var(--u));height:calc(30*var(--u));flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+.stack-row .ico img{width:100%;height:100%;object-fit:contain}
+.stack-row b{font-size:calc(20*var(--u));color:var(--flame);font-weight:600;min-width:calc(150*var(--u));text-align:left}
+.stack-row span{font-size:calc(16*var(--u));color:var(--ash)}
+.stack-arrow{text-align:center;color:var(--coral-deep);font-size:calc(18*var(--u));line-height:1}
+
+/* ── the theme's sunrise horizon, ported ───────────────────── */
+.horizon{
+  --orbit-r:1900px;--line-y:101%;
+  position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 3%,#000 24%,#000 76%,transparent 97%);
+  mask-image:linear-gradient(90deg,transparent 3%,#000 24%,#000 76%,transparent 97%);
+}
+.horizon::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),var(--void) calc(var(--orbit-r) - .5px),transparent var(--orbit-r)),
+    radial-gradient(ellipse 9% 5% at 50% var(--line-y),rgba(255,251,244,.85),transparent 68%),
+    radial-gradient(ellipse 15% 8% at 50% var(--line-y),rgba(255,228,196,.52),transparent 70%),
+    radial-gradient(ellipse 24% 12% at 50% var(--line-y),rgba(255,192,132,.32),transparent 72%),
+    radial-gradient(ellipse 38% 19% at 50% var(--line-y),rgba(255,156,88,.19),transparent 74%),
+    radial-gradient(ellipse 56% 28% at 50% var(--line-y),rgba(255,124,58,.10),transparent 77%),
+    radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1px),rgba(255,150,70,.34) calc(var(--orbit-r) + 6px),rgba(255,116,42,.10) calc(var(--orbit-r) + 46px),transparent calc(var(--orbit-r) + 130px));
+}
+.horizon::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(var(--orbit-r) var(--orbit-r) at 50% calc(var(--line-y) + var(--orbit-r)),transparent calc(var(--orbit-r) - 1.6px),rgba(255,240,216,.95) calc(var(--orbit-r) - .3px),rgba(255,240,216,.95) var(--orbit-r),transparent calc(var(--orbit-r) + .9px));
+}
+
+/* ── chrome ────────────────────────────────────────────────── */
+.hud{
+  position:absolute;right:calc(26*var(--u));bottom:calc(20*var(--u));z-index:3;
+  font-family:"IBM Plex Mono",monospace;font-size:calc(14*var(--u));
+  color:var(--ash-dim);transition:opacity .5s ease;
+}
+.hud.idle{opacity:0}
+
+.blank{position:absolute;inset:0;z-index:9;background:#000}
+
+@media (prefers-reduced-motion:reduce){
+  .hud{transition:none}
+  .track{scroll-behavior:auto}
+}
+
+/* a card whose mark is a real app icon rather than its own name */
+.s-card .card-logo{width:calc(60*var(--u));height:calc(60*var(--u));object-fit:contain;
+  border-radius:calc(13*var(--u))}
+
+/* all three ecosystem cards get the same mark slot, so their names sit on one line */
+.s-card .card-mark{height:calc(60*var(--u));display:flex;align-items:center;justify-content:center}
+.s-card .card-mark img{width:calc(56*var(--u));height:calc(56*var(--u));object-fit:contain;
+  border-radius:calc(12*var(--u))}
+.s-card .card-mark svg{width:calc(50*var(--u));height:calc(50*var(--u));fill:none;
+  stroke:var(--coral);stroke-width:calc(2.6*var(--u));stroke-linecap:round;stroke-linejoin:round}
+
+/* one hardware bay height, so rigs of different shapes share a baseline */
+.hw{height:calc(242*var(--u));display:flex;align-items:center;justify-content:center}
+
+
+/* tmux isn't a transport hop — it lives on the Mac with Claude Code */
+.run-seg.on-mac{background:linear-gradient(180deg,rgba(255,120,45,.19),rgba(255,120,45,.04))}
+
+/* two beats carry the turn of the talk — they get room to land */
+.slide-statement.xl .s-lead{font-size:calc(76*var(--u));line-height:1.14}
+.slide-statement.xl .s-sub{font-size:calc(30*var(--u));margin-top:calc(32*var(--u))}
+.slide-clip.solo.xl .s-h2{font-size:calc(56*var(--u))}
+.slide-clip.solo.xl .s-flow{font-size:calc(32*var(--u));gap:calc(18*var(--u))}
+.slide-clip.solo.xl .s-sm{font-size:calc(24*var(--u))}
+
+/* meme slide: the pair sits centred, title heavier */
+.slide-clip.meme{justify-content:center;gap:calc(72*var(--u))}
+.slide-clip.meme .copy{flex:0 1 auto;max-width:calc(430*var(--u))}
+.slide-clip.meme .s-h2{font-size:calc(54*var(--u));font-weight:700}
+.slide-clip.meme .s-body{max-width:none;white-space:nowrap;font-size:calc(20*var(--u))}
+
+/* friction slides: problem on top, what I did underneath */
+.copy .problem{display:block;font-size:calc(20*var(--u));line-height:1.5;color:var(--ash);
+  max-width:50ch}
+.copy .fix{
+  display:block;margin-top:calc(22*var(--u));padding-top:calc(20*var(--u));
+  border-top:calc(2*var(--u)) solid var(--coral-deep);
+  font-size:calc(20*var(--u));line-height:1.5;color:var(--bone);max-width:50ch;
+}
+.copy .fix b{display:block;font-size:calc(15*var(--u));letter-spacing:.06em;
+  color:var(--coral);margin-bottom:calc(8*var(--u));font-weight:600}
+.copy .fix strong{color:var(--flame);font-weight:600}
+
+/* pros summary */
+.pros{display:flex;gap:calc(24*var(--u));width:calc(1030*var(--u));margin-top:calc(34*var(--u))}
+.pro{flex:1 1 0;background:rgba(21,12,9,.55);border:calc(1*var(--u)) solid var(--line);
+  border-radius:calc(18*var(--u));padding:calc(30*var(--u)) calc(22*var(--u));text-align:left}
+.pro .n{font-family:"IBM Plex Mono",monospace;font-size:calc(13*var(--u));letter-spacing:.2em;color:var(--coral)}
+.pro h3{font-size:calc(26*var(--u));font-weight:600;color:var(--flame);margin-top:calc(12*var(--u));line-height:1.25}
+.pro p{font-size:calc(18*var(--u));line-height:1.5;color:var(--ash);margin-top:calc(12*var(--u))}
+
+/* A line sitting straight under a title is a subtitle, not a footnote: the flex gap
+   already spaces it, so drop the footnote margin that was doubling up. */
+.slide-clip.solo .s-h2 + .s-sm{
+  margin-top:0;font-size:calc(21*var(--u));color:var(--ash);
+}
+
+/* ── problem → solution, one shape across the three friction slides ── */
+.p-label{
+  font-size:calc(16*var(--u));font-weight:600;letter-spacing:.06em;
+  color:var(--coral-deep);margin-bottom:calc(10*var(--u));
+}
+.p-label.sol{
+  color:var(--coral);margin-top:calc(26*var(--u));padding-top:calc(22*var(--u));
+  border-top:calc(2*var(--u)) solid var(--coral-deep);
+}
+.p-detail{font-size:calc(20*var(--u));line-height:1.5;color:var(--ash);
+  margin-top:calc(12*var(--u));max-width:50ch}
+.p-fix{font-size:calc(21*var(--u));line-height:1.5;color:var(--bone);max-width:50ch}
+.p-fix strong{color:var(--flame);font-weight:600}
+
+/* a beat before the turn */
+.s-kicker{font-size:calc(34*var(--u));font-weight:600;color:var(--ash-dim);
+  margin-bottom:calc(18*var(--u))}
+
+/* tmux earns a qualifier — the wire works without it */
+.tool .t-opt{
+  display:inline-block;font-size:calc(12*var(--u));letter-spacing:.14em;text-transform:uppercase;
+  color:var(--coral);border:calc(1*var(--u)) solid var(--coral-deep);border-radius:calc(999*var(--u));
+  padding:calc(3*var(--u)) calc(10*var(--u));margin-top:calc(2*var(--u));
+}
+
+/* the sync line should read as centred on the machines, not on the whole column */
+.rig-row{align-items:flex-start}
+.wire{height:calc(242*var(--u));justify-content:center}
+
+/* slide 10's copy sits in from the edge */
+.slide-clip.phone-split .copy{left:calc(140*var(--u))}

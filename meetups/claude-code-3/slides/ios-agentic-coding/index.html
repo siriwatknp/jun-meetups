@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Leveraging iOS ecosystem for agentic coding — Claude Code Sharing #3</title>
+<meta name="description" content="Slides for the session 'Leveraging iOS ecosystem for agentic coding' by ศิริวัชร์ คุณาพร (จุ้น) at Claude Code Sharing #3, 19 Aug 2026."/>
+<meta property="og:title" content="Leveraging iOS ecosystem for agentic coding"/>
+<meta property="og:description" content="Slides · Claude Code Sharing #3 · 19 Aug 2026"/>
+<meta property="og:image" content="../../posters/fb-link.png"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/png" href="../../assets/favicon-48.png"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="deck">
+  <div class="stage">
+    <div class="horizon" aria-hidden="true"></div>
+
+    <div class="track" id="track" tabindex="-1" role="group" aria-label="Slides. Use arrow keys to navigate.">
+
+      <!-- 1 — TITLE -->
+      <section class="slide slide-title" aria-label="Slide 1: title">
+        <p class="eyebrow">CLAUDE CODE SHARING <i class="hash">#3</i></p>
+        <h1 class="s-title">Leveraging <em>iOS ecosystem</em><br/>for agentic coding</h1>
+        <p class="s-by">ศิริวัชร์ คุณาพร (จุ้น)</p>
+        <p class="s-role">UI Engineer at MUI</p>
+        <p class="s-foot">19 Aug 2026 · Agoda Thailand, One Bangkok</p>
+      </section>
+
+      <!-- 2 — THE MEME -->
+      <section class="slide slide-clip meme" aria-label="Slide 2: you cannot close the lid">
+        <figure class="shot tall">
+          <img src="assets/img/meme-close-the-lid.jpg" alt="A fake Apple-style ad for a clamp that holds a MacBook slightly open so background agents stay alive."/>
+        </figure>
+        <div class="copy">
+          <h2 class="s-h2">You cannot<br/><em>close the lid</em></h2>
+          <p class="s-body">Session ยาวขึ้น · หลาย session พร้อมกัน<br/>บางอันปล่อยไว้ แล้วค่อยกลับมาดู</p>
+        </div>
+      </section>
+
+      <!-- 3 — THE REQUIREMENT -->
+      <section class="slide slide-statement xl" aria-label="Slide 3: the requirement">
+        <p class="s-lead">Always Running.<br/><em>Always Accessible.</em></p>
+        <p class="s-sub">Agent ต้องทำงานได้ตลอด และผมต้องเข้าถึงมันได้ตลอด</p>
+      </section>
+
+      <!-- 4 — THE FIRST ANSWER -->
+      <section class="slide slide-clip solo" aria-label="Slide 4: two machines">
+        <h2 class="s-h2">ความคิดแรก ซื้อ Mac Mini</h2>
+        <div class="rig rig-row">
+          <div class="rig-col">
+            <div class="hw"><img class="rig-img is-mini" src="assets/img/mac-mini.png" alt="Mac mini"/></div>
+            <p class="rig-label">อยู่บ้าน · เปิดตลอด</p>
+            <p class="rig-badge"><img src="assets/logos/claude.png" alt=""/><span>Claude Code</span></p>
+          </div>
+          <div class="wire">
+            <b class="mono">data sync</b>
+            <div class="line"></div>
+            <i>project · ไฟล์</i>
+          </div>
+          <div class="rig-col">
+            <div class="hw"><img class="rig-img is-book" src="assets/img/mac-book-pro.png" alt="MacBook Pro"/></div>
+            <p class="rig-label">พกออกไปข้างนอก</p>
+            <p class="rig-badge"><img src="assets/logos/claude.png" alt=""/><span>Claude Code</span></p>
+          </div>
+        </div>
+        <p class="s-sm">สอง Claude Code แยกกันคนละเครื่อง — sync กันแค่ไฟล์ ไม่ใช่ session</p>
+      </section>
+
+      <!-- 5 — THE MEETUP -->
+      <section class="slide slide-clip solo" aria-label="Slide 5: seeing the iPad at CC2">
+        <h2 class="s-h2">เปิดโลกจาก meetup ครั้งที่แล้ว</h2>
+        <p class="s-sm">เมื่อได้เห็นพี่ไทใช้ Claude Code บน iPad</p>
+        <figure class="shot wide">
+          <img src="assets/img/ipad-at-cc2.jpg" alt="Claude Code #2 Bangkok Meetup livestream: a speaker's screen showing terminal sessions."/>
+          <figcaption>Claude Code Sharing #2 · 13 May 2026</figcaption>
+        </figure>
+      </section>
+
+      <!-- 6 — THE REFRAME -->
+      <section class="slide slide-clip solo" aria-label="Slide 6: the reframe">
+        <h2 class="s-h2">iPad เป็นแค่<em> หน้าต่าง</em></h2>
+        <div class="rig rig-row">
+          <div class="rig-col who">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="15" r="8"/>
+              <path d="M8 42c0-8.8 7.2-14 16-14s16 5.2 16 14"/>
+            </svg>
+            <p class="rig-name">ผม</p>
+          </div>
+          <div class="wire">
+            <b>พิมพ์ · แตะ · วง</b>
+            <div class="line solid"></div>
+            <i>input</i>
+          </div>
+          <div class="rig-col">
+            <div class="hw"><img class="rig-img is-pad" src="assets/img/ipad-air.png" alt="iPad Air"/></div>
+            <p class="rig-name">iPad</p>
+            <p class="rig-label mono">interface</p>
+          </div>
+          <div class="wire">
+            <b class="mono">passthrough</b>
+            <div class="line solid"></div>
+            <i>ไม่มีอะไรรันที่นี่</i>
+          </div>
+          <div class="rig-col">
+            <div class="hw"><img class="rig-img is-book" src="assets/img/mac-book-pro.png" alt="MacBook Pro"/></div>
+            <p class="rig-name">Mac ที่บ้าน</p>
+            <p class="rig-badge"><img src="assets/logos/claude.png" alt=""/><span>Claude Code</span></p>
+          </div>
+        </div>
+        <p class="s-sm">source code และ session ทั้งหมดอยู่บน Mac — iPad แค่ส่งสิ่งที่ผมทำต่อไปให้มัน</p>
+      </section>
+
+      <!-- 7 — THE TOOLS -->
+      <section class="slide slide-clip solo" aria-label="Slide 7: the tools">
+        <h2 class="s-h2">Four tools, one wire</h2>
+        <div class="tools">
+          <div class="tool"><div class="mark"><img src="assets/logos/blink.png" alt=""/></div><p class="t-name">Blink Shell</p><p class="t-what">Terminal บน iPad</p><p class="t-link">blink.sh</p></div>
+          <div class="tool"><div class="mark"><img src="assets/logos/tailscale.svg" alt=""/></div><p class="t-name">Tailscale</p><p class="t-what">เชื่อม iPad กลับไปหา Mac ที่บ้าน</p><p class="t-link">tailscale.com</p></div>
+          <div class="tool"><div class="mark"><span class="as-mark">Mosh</span></div><p class="t-what">Connection ที่ไม่หลุดเวลาเปลี่ยนที่</p><p class="t-link">mosh.org</p></div>
+          <div class="tool"><div class="mark"><span class="as-mark">tmux</span></div><p class="t-opt">optional</p><p class="t-what">Session ยังรันอยู่ตอนเรา disconnect</p><p class="t-link">tmux.github.io</p></div>
+        </div>
+      </section>
+
+      <!-- 8 — THE STACK -->
+      <section class="slide slide-clip solo" aria-label="Slide 8: how they stack">
+        <h2 class="s-h2">จาก Blink ถึง Claude Code</h2>
+        <div class="run">
+          <div class="run-end">
+            <img src="assets/logos/blink.png" alt=""/>
+            <b>Blink</b><i>ผมพิมพ์ที่นี่</i>
+          </div>
+          <div class="run-mid">
+            <div class="run-seg"><b>Tailscale</b><span>หา Mac เจอจากทุกที่</span></div>
+            <div class="run-seg"><b>Mosh</b><span>connection ไม่หลุด</span></div>
+            <div class="run-seg on-mac"><b>tmux</b><span>session ที่รันอยู่บน Mac</span></div>
+          </div>
+          <div class="run-end">
+            <img src="assets/logos/claude.png" alt=""/>
+            <b>Claude Code</b><i>ทำงานค้างอยู่</i>
+          </div>
+        </div>
+        <p class="s-sm">Tailscale กับ Mosh ทำให้เส้นไม่ขาด — ส่วน tmux คือ session ที่รออยู่บน Mac ปลายทาง</p>
+      </section>
+
+      <!-- 9 — DEMO: CONNECT -->
+      <section class="slide slide-clip split pad-split" aria-label="Slide 9: connecting from the iPad">
+        <div class="copy lg">
+          <h2 class="s-h2">เปิด Blink<br/>เพื่อต่อเข้า Macbook</h2>
+          <p class="s-body">ต่อเข้า Mac ที่บ้าน แล้วเจอ session ที่ค้างไว้รออยู่ กลับไปทำต่อได้เลย ไม่ต้องเริ่มใหม่</p>
+          <p class="s-body">Claude Code มี Agent Views อยู่แล้ว เลยไม่ต้องทำอะไรเพิ่ม ก็ใช้งานได้ทันที</p>
+        </div>
+        <figure class="clip wide">
+          <div class="device pad">
+            <span class="keys" aria-hidden="true"></span>
+            <video controls playsinline preload="metadata" poster="clips/blink-connect.jpg">
+            <source src="clips/blink-connect.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 10 — THE PHONE -->
+      <section class="slide slide-clip split phone-split" aria-label="Slide 10: same session on the iPhone">
+        <div class="copy">
+          <h2 class="s-h2">Device เปลี่ยนได้<br/><em>session ไม่เปลี่ยน</em></h2>
+          <p class="s-body">ไม่มี iPad ก็หยิบ iPhone ขึ้นมา — <strong>session เดิม</strong> คุยต่อได้ทันที ไม่ lose context</p>
+        </div>
+        <figure class="clip portrait">
+          <div class="device phone">
+            <video controls playsinline preload="metadata" poster="clips/continue-on-iphone.jpg">
+            <source src="clips/continue-on-iphone.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </figure>
+      </section>
+
+
+      <!-- 11 — WHAT IT BUYS -->
+      <section class="slide slide-clip solo" aria-label="Slide 11: what the setup buys">
+        <h2 class="s-h2">iPad + MacBook ได้อะไรบ้าง</h2>
+        <div class="pros">
+          <div class="pro">
+            <p class="n">01</p>
+            <h3>Session ต่อเนื่อง</h3>
+            <p>หยิบขึ้นมาเมื่อไหร่ก็ทำต่อจากเดิม มีไอเดียตอนไหนก็เปิด session ใหม่ได้ทันที</p>
+          </div>
+          <div class="pro">
+            <p class="n">02</p>
+            <h3>กด Enter แล้วเดินได้เลย</h3>
+            <p>เครื่องที่ทำงานจริงอยู่บ้าน เปิดตลอด internet นิ่ง — พับ iPad เก็บได้เลย</p>
+          </div>
+          <div class="pro">
+            <p class="n">03</p>
+            <h3>Device เปลี่ยนได้</h3>
+            <p>Mac, iPad หรือ iPhone ก็เข้า session เดียวกัน ไม่ lose context</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 — THE TURN -->
+      <section class="slide slide-statement xl" aria-label="Slide 12: the turn">
+        <p class="s-kicker">แต่ๆๆ…</p>
+        <p class="s-lead">ปัญหาไม่ได้อยู่ที่<br/>Claude Code</p>
+        <p class="s-sub">แต่อยู่ที่ workflow <em>รอบ ๆ</em> มัน</p>
+      </section>
+
+      <!-- 12 — THE LOOP -->
+      <section class="slide slide-clip solo xl" aria-label="Slide 13: my loop">
+        <h2 class="s-h2">งานผมไม่ได้จบแค่ Terminal</h2>
+        <div class="s-flow">
+          <span>Prompt</span><i>→</i><span>Code</span><i>→</i><span class="hot">See</span><i>→</i>
+          <span class="hot">Feedback</span><i>→</i><span class="hot">Preview</span><i>→</i><span>Iterate</span>
+        </div>
+        <p class="s-sm">สามอันตรงกลาง คือจุดที่เริ่มมี friction บน iPad</p>
+      </section>
+
+      <!-- 13 — FRICTION 1 -->
+      <section class="slide slide-clip split pad-split" aria-label="Slide 14: output comes to me">
+        <div class="copy">
+          <p class="p-label">Problem 1</p>
+          <h2 class="s-h2">ดู Output ยังไง</h2>
+          <p class="p-detail">เช่น screenshot / recording</p>
+          <p class="p-label sol">Solution</p>
+          <p class="p-fix">ให้ Claude เขียน Hook ดักตอนเรียก SendUserFile แล้ว<strong>ส่งไฟล์เข้า iMessage</strong></p>
+        </div>
+        <figure class="clip wide">
+          <div class="device pad">
+            <span class="keys" aria-hidden="true"></span>
+            <video controls playsinline preload="metadata" poster="clips/screenshot-to-messages.jpg">
+            <source src="clips/screenshot-to-messages.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 14 — FRICTION 2 (HERO) -->
+      <section class="slide slide-clip split pad-split" aria-label="Slide 15: annotate and send back">
+        <div class="copy">
+          <p class="p-label">Problem 2</p>
+          <h2 class="s-h2">ส่ง feedback กลับยังไง</h2>
+          <p class="p-detail">เช่น วงรูปบอกว่าตรงไหนไม่โอเค</p>
+          <p class="p-label sol">Solution</p>
+          <p class="p-fix">วงด้วย Pencil แล้ว Save to Files — ไฟล์ไปโผล่บน Mac แล้วบอกว่า <strong>“check tray”</strong></p>
+        </div>
+        <figure class="clip wide">
+          <div class="device pad">
+            <span class="keys" aria-hidden="true"></span>
+            <video controls playsinline preload="metadata" poster="clips/pencil-check-tray.jpg">
+            <source src="clips/pencil-check-tray.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 15 — FRICTION 3 -->
+      <section class="slide slide-clip split pad-split" aria-label="Slide 16: the link arrives">
+        <div class="copy">
+          <p class="p-label">Problem 3</p>
+          <h2 class="s-h2">เปิด link จาก Blink ไม่ได้</h2>
+          <p class="p-detail">เช่น deploy preview ที่ agent ตอบกลับมา</p>
+          <p class="p-label sol">Solution</p>
+          <p class="p-fix">ให้ Claude เขียน Hook จับ URL ตาม pattern ที่สนใจ แล้ว<strong>ส่งเข้า Messages</strong></p>
+        </div>
+        <figure class="clip wide">
+          <div class="device pad">
+            <span class="keys" aria-hidden="true"></span>
+            <video controls playsinline preload="metadata" poster="clips/preview-link.jpg">
+            <source src="clips/preview-link.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </figure>
+      </section>
+
+      <!-- 16 — THE LINE -->
+      <section class="slide slide-statement" aria-label="Slide 17: Claude Code fixes Claude Code">
+        <p class="s-lead">ผมใช้ Claude Code<br/><em>มาแก้ pain point ของการใช้ Claude Code</em></p>
+        <p class="s-sub">อธิบาย problem → ให้มันเสนอ option → เลือก → ให้มัน implement</p>
+      </section>
+
+      <!-- 17 — THE ECOSYSTEM -->
+      <section class="slide slide-clip solo" aria-label="Slide 18: the ecosystem">
+        <h2 class="s-h2">ต่อ agent เข้ากับของที่เราใช้อยู่แล้ว</h2>
+        <div class="s-row">
+          <div class="s-card"><span class="card-mark"><img src="assets/logos/messages.png" alt=""/></span><span class="as-mark">Messages</span><span class="c-sub">output มาหาเรา</span></div>
+          <div class="s-card"><span class="card-mark"><img src="assets/logos/files.png" alt=""/></span><span class="as-mark">Files</span><span class="c-sub">ไฟล์ไปโผล่บน Mac</span></div>
+          <div class="s-card"><span class="card-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M33 6l9 9-24 24-12 3 3-12z"/><path d="M29 10l9 9"/></svg></span><span class="as-mark">Apple Pencil</span><span class="c-sub">วงตรงที่อยากให้แก้</span></div>
+        </div>
+        <p class="s-sm">ผมไม่ได้เปลี่ยน workflow ให้เข้ากับ Claude Code — ผมทำให้ Claude Code เข้ามาอยู่ใน workflow ของผม</p>
+      </section>
+
+      <!-- 18 — THE QUESTION -->
+      <section class="slide slide-statement" aria-label="Slide 19: the question">
+        <p class="s-lead">มี friction เล็ก ๆ อะไร<br/><em>ที่เราทำซ้ำอยู่ทุกวันบ้าง?</em></p>
+        <p class="s-sub">ส่งไฟล์ · ดู preview · เก็บ context · เปิด link</p>
+      </section>
+
+      <!-- 19 — CLOSE -->
+      <section class="slide slide-statement" aria-label="Slide 20: thank you">
+        <p class="s-lead">ขอบคุณครับ</p>
+        <p class="s-sub">วันนี้ cost ของการสร้าง software เล็ก ๆ เพื่อแก้ปัญหาตัวเอง มันต่ำลงมาก</p>
+      </section>
+
+    </div><!-- /track -->
+
+    <p class="hud" id="hud" aria-hidden="true"><span id="hudNow">1</span>&thinsp;/&thinsp;<span id="hudAll">1</span></p>
+    <div class="blank" id="blank" hidden></div>
+  </div><!-- /stage -->
+</div>
+
+<script>
+(function () {
+  var track = document.getElementById('track');
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.slide'));
+  var hud = document.getElementById('hud');
+  var hudNow = document.getElementById('hudNow');
+  var blank = document.getElementById('blank');
+  var index = 0;
+  var idleTimer;
+  var navAt = 0; /* last programmatic move; the scroll sync must not fight the animation */
+
+  document.getElementById('hudAll').textContent = slides.length;
+
+  /* Clips never autoplay. On a slide holding clips, the first forward press starts the
+     next one and the press after that moves on — the build-step model, so a clicker can
+     drive a demo from across the room without anything ever playing by itself. */
+  var clips = slides.map(function (s) { return Array.prototype.slice.call(s.querySelectorAll('video')); });
+  var steps = slides.map(function () { return 0; });
+
+  /* A clip started by mouse (a visitor, or you at the laptop) must also consume its build
+     step, or the next clicker press is spent re-playing what is already running. */
+  clips.forEach(function (list, s) {
+    list.forEach(function (v, c) {
+      v.addEventListener('play', function () { if (steps[s] < c + 1) steps[s] = c + 1; });
+    });
+  });
+
+  /* replaceState throws on opaque origins (file://) — deep-linking is optional,
+     presenting is not. */
+  function mark(i) {
+    try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) {}
+  }
+
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  function behavior() { return reduced.matches ? 'auto' : 'smooth'; }
+
+  function go(i, push) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    if (i !== index) clips[index].forEach(function (v) { v.pause(); }); /* leave it where it is, don't rewind */
+    index = i;
+    navAt = Date.now();
+    track.scrollTo({ left: i * track.clientWidth, behavior: behavior() });
+    hudNow.textContent = i + 1;
+    if (push !== false) mark(i);
+    wake();
+  }
+
+  /* keep index honest when the user swipes/scrolls the track directly */
+  var syncTimer;
+  track.addEventListener('scroll', function () {
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () {
+      /* Mid-flight smooth-scroll from our own go() — trust index, not the scroll position.
+         Without this, holding down a clicker's next button desyncs counter from content. */
+      if (Date.now() - navAt < 700) return;
+      var i = Math.round(track.scrollLeft / track.clientWidth);
+      if (i !== index) { index = i; hudNow.textContent = i + 1; mark(i); }
+    }, 90);
+  }, { passive: true });
+
+  /* HUD fades while idle so it never sits in a photo of the projection */
+  function wake() {
+    hud.classList.remove('idle');
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(function () { hud.classList.add('idle'); }, 2500);
+  }
+
+  function fullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen().catch(function () {});
+  }
+
+  function toggleBlank() { blank.hidden = !blank.hidden; }
+
+  function next() {
+    var v = clips[index];
+    if (steps[index] < v.length) {
+      var el = v[steps[index]];
+      steps[index]++;
+      el.play().catch(function () {}); /* a blocked play must not eat the press */
+      wake();
+      return;
+    }
+    go(index + 1);
+  }
+
+  /* Clickers (Logitech R400/R500 et al.) emit PageDown/PageUp for next/prev,
+     'b' or '.' for blank, and F5/Esc to start/stop — F5 must not reload the deck. */
+  var NEXT = ['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Spacebar', 'Enter', 'n', 'N'];
+  var PREV = ['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace', 'p', 'P'];
+
+  addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+    /* While a video owns the fullscreen layer it also owns the keyboard — advancing the
+       deck behind it would be invisible and confusing. Everywhere else the deck wins,
+       even when a clicked video holds focus, so the clicker is never dead. */
+    var fs = document.fullscreenElement;
+    if (fs && fs.tagName === 'VIDEO') return;
+
+    var k = e.key;
+
+    if (NEXT.indexOf(k) > -1) { e.preventDefault(); next(); }
+    else if (PREV.indexOf(k) > -1) { e.preventDefault(); go(index - 1); }
+    else if (k === 'Home') { e.preventDefault(); go(0); }
+    else if (k === 'End') { e.preventDefault(); go(slides.length - 1); }
+    else if (k === 'f' || k === 'F' || k === 'F5') { e.preventDefault(); fullscreen(); }
+    else if (k === 'b' || k === 'B' || k === '.') { e.preventDefault(); toggleBlank(); }
+    else if (k === 'Escape' && !blank.hidden) { e.preventDefault(); toggleBlank(); }
+  });
+
+  addEventListener('resize', function () {
+    track.scrollTo({ left: index * track.clientWidth, behavior: 'auto' });
+  });
+
+  addEventListener('pointermove', wake);
+  blank.addEventListener('click', toggleBlank);
+
+  var start = parseInt((location.hash || '').slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1, false);
+  wake();
+})();
+</script>
+</body>
+</html>

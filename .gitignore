@@ -4,3 +4,8 @@ node_modules/
 .playwright-cli/
 .playwright/
 .vercel
+
+# Raw talk recordings/photos — huge, never committed or deployed.
+# Ignore the contents, keep the README so the filename convention is versioned.
+meetups/*/slides/*/assets/raw/*
+!meetups/*/slides/*/assets/raw/README.md
