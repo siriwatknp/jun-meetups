@@ -253,18 +253,55 @@ closing question needed.
 - **Profile results are the sponsor deck.** P1 is the "who came" slide for Agoda and for
   whoever takes the open sponsor slot on the poster.
 
-### If you use Slido
+## Which tool can actually run this
 
-Slido runs live: votes land on the presenter screen in real time, and its audience Q&A supports
-upvoting, which is exactly what C2 needs.
+This set is **9 polls + 1 Q&A**, for a room of roughly 60–100 people plus online viewers.
+That count is what rules tools in or out.
 
-Check before the night: **the free tier is reported to cap an event at 3 polls (and around 100
-participants)** — Q&A is unlimited. This set has 9 polls plus C2, so a free account won't cover
-it; you'd need a paid plan, or split across several Slido events, each with its own join code
-(clunky mid-event). If you do stay free, the three polls to keep are **C1, A2, A4** — C2 rides
-along free as Q&A.
+| Tool | Free-tier polls | Free-tier audience | Verdict |
+|---|---|---|---|
+| **Slido** | **3 polls + 1 quiz** | ~100 | ✗ Won't fit — this is the wall you hit |
+| **Vevox** | Unlimited multi-choice polls + Q&A | 100 | ✓ Best verified fit |
+| **livepoll.io** | Unlimited, all question types | 1,000 | ✓ If it holds up — unverified, see below |
+| **Mentimeter** | Unlimited questions | 50 **per month, cumulative** | ✗ One night eats the whole allowance |
+| **AhaSlides** | 3 poll slides | 50 per presentation | ✗ Same 3-poll wall as Slido |
+| **Poll Everywhere** | Unlimited | 25 responses per activity | ✗ Far too small |
 
-I couldn't reach slido.com from this environment to confirm against the official pricing page;
-those figures come from third-party write-ups, so verify on
-[slido.com/pricing](https://www.slido.com/pricing) before committing to a plan. Mentimeter has
-similar per-presentation limits on its free tier — worth checking the same way.
+**Slido's limit is the poll count, not the answer options.** Slido support states there's no cap
+on how many answer options a poll can have — a slido is limited to 100,000 characters total,
+which nothing here comes close to. So the 5- and 6-option questions in this set are fine; you
+simply can't have more than three of them on the free plan. Q&A stays unlimited, so C2 is free
+either way.
+
+**Vevox free is the safest swap.** 100 participants, unlimited multi-choice polls, Q&A with
+upvoting, quizzes — which covers every question here, since the set is entirely multiple choice
+plus C2. Three caveats to check: the free tier has **no word cloud** (doesn't matter — none left
+in this set), **no data export** (screenshot the charts on the night if you want them for the
+sponsor deck), and **only one session can be live at a time**.
+
+**Confirm one thing before committing: multi-select.** A2 is the only question that needs
+"choose all that apply". If the free tier you pick doesn't support it, don't drop A2 — run it as
+single-choice worded *"ที่ไหนที่คุณใช้บ่อยที่สุด?"* ("where do you use it most?"). The laptop
+bar still towers and the point survives; you just lose the overlap detail.
+
+**livepoll.io claims to have no limits at all** — unlimited questions, every question type, up
+to 1,000 participants, free forever, no account needed for attendees. If accurate it's the ideal
+fit for this set. But every one of those claims comes from livepoll.io's own marketing pages; I
+found no independent review, and the site is blocked from the environment I checked from, so
+none of it is verified. Don't discover that live in front of 80 people — run a full rehearsal on
+a phone a few days before, with all 10 questions loaded.
+
+**If you'd rather just stay on Slido**, two routes: buy one month of a paid plan and cancel
+after (simplest, and the export is worth something), or cut to three polls. If you cut, keep
+**C1, A2, D1** — presence, the thesis chart, and the one that's both funny and on-theme. C2
+rides along free as Q&A.
+
+**Whatever you pick, rehearse it.** Load all ten questions, join from a phone on mobile data
+(not office wifi), and check that Thai renders correctly on the presenter screen — Thai glyph
+handling is the single most common thing these tools get wrong, and you won't find out from a
+feature table.
+
+*Sources checked Aug 2026: Slido community answers on the free-plan poll cap and the answer-option
+limit; Vevox's own help pages; livepoll.io's marketing pages (unverified). slido.com and
+livepoll.io were both unreachable from the environment used to check, so verify pricing pages
+directly before paying.*
