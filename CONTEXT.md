@@ -49,6 +49,14 @@ A talk. `title`, optional `abstract`, and one or more Speakers. Renders as the p
 speaker cards (shown without times).
 _Avoid_: Talk (alias ok), Slot.
 
+**Slides**:
+The HTML presentation for one Session — a self-contained page under the Meetup
+(`meetups/<id>/slides/<session-id>/`) with its own CSS and assets. Authored to a fixed 16:9
+stage so the projection matches what was authored; navigable by keyboard, touch, and
+presentation clicker. May embed short demo clips (committed MP4s) played during the talk.
+Optional per Session, and linked from the Meetup page only once the Session has been given.
+_Avoid_: Deck (collides with the poster/card sense), Presentation.
+
 **Schedule**:
 A Meetup's timeline — ordered items, each `{ time, label, session? }`. Talk rows reference a
 Session (so titles aren't retyped); non-talk rows (registration, break, networking) have none.
@@ -62,6 +70,7 @@ _Avoid_: Agenda (alias ok), Timeline.
 - A **Meetup** conforms to the one shared **Content structure**
 - A **Meetup** produces a set of **Posters** (one per aspect bucket)
 - A **Session** is given by one or more **Speakers**; a **Speaker** may give multiple **Sessions**
+- A **Session** optionally has one set of **Slides**
 - A **Schedule** item references zero or one **Session**
 
 ## Flagged ambiguities
